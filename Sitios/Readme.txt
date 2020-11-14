@@ -35,4 +35,5 @@ Historial de comandos
 >>>> 1234
 >>>> 1234
 >> python manage.py startapp core
+
 >> python manage.py runserver

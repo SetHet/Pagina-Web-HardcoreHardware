@@ -19,6 +19,9 @@ Instrucciones
     >> python manage.py createsuperuser
     >> ...Ingresar lo que pida
 
+    Crear nueva aplicacion
+    >> python manage.py startapp core
+
 Historial de comandos
 
 >> django-admin startproject sitio_hh
@@ -31,4 +34,5 @@ Historial de comandos
 >>>> admin@hh.cl
 >>>> 1234
 >>>> 1234
+>> python manage.py startapp core
 >> python manage.py runserver

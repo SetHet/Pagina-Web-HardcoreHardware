@@ -1,0 +1,34 @@
+@import "style_base.css";
+
+footer{
+    background-color: var(--custom-color-dark);
+    color: var(--custom-color-white);
+    height: none;
+}
+
+.row {
+    align-items: center;
+}
+
+.footer-col {
+    margin-top: 10px;
+}
+
+.footer-bloque{
+    margin: auto;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding: 0px;
+}
+
+.footer-link {
+    color: white;
+    font-weight: bold;   
+}
+
+footer a:hover {
+    color: rgb(0, 174, 255);
+}

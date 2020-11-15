@@ -1,0 +1,37 @@
+@import "style_base.css";
+
+
+main {
+    background-color: var(--custom-color-dark);
+    color: var(--custom-color-white);
+}
+
+.calc-label {
+    width: 100%;
+    text-align: center;
+}
+
+.calc-input {
+    width: 100%;   
+    max-width: 300px;
+    text-align: left;
+    background-color: var(--custom-color-shadow);
+    color: var(--custom-color-white);
+}
+
+.calc-button {
+    background-color: var(--custom-color-black);
+    color: var(--custom-color-white);
+    width: 130px;
+}
+
+.calc-button:hover{
+    background-color: var(--custom-color-shadow);
+    color: var(--custom-color-white);
+}
+
+.calc-button-group {
+    margin: auto;
+    margin-top: 10px;
+}
+

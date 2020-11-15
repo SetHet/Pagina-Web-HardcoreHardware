@@ -50,7 +50,7 @@
                         <a class="nav-link" href="guias.html" target="_top">Guias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="calcular_precio.html" target="_top">Moneda</a>
+                        <a class="nav-link" href="{% url 'calc' %}" target="_top">Moneda</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about' %}" target="_top">Acerca de</a>
@@ -133,7 +133,7 @@
                         <li>Dolares: <span class="valorDolar"></span></li>
                         <li>Euros: <span class="valorEuro"></span></li>
                         <li>UF: <span class="valorUF"></span></li>
-                        <li><a class="footer-link" href="calcular_precio.html" target="_blank">Calcular</a></li>
+                        <li><a class="footer-link" href="{% url 'calc' %}" target="_blank">Calcular</a></li>
                     </ul>
                 </div>
 

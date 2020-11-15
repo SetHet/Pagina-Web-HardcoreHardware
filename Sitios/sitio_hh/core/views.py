@@ -4,5 +4,10 @@ from django.shortcuts import render, HttpResponse
 def home(request):
     return render(request, "core/home.html")
 
+
 def about(request):
     return HttpResponse("<h1>Sobre nosotros</h1><h2>Yoyoyos</h2>")
+
+
+def calc(request):
+    return render(request, "core/calc.html")

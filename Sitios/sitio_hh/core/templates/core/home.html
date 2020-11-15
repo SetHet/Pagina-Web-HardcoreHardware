@@ -1,9 +1,431 @@
 {% extends 'core/base.html' %}
 
+{% load static %}
+
+{% block css_custom %}
+    <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+{% endblock %}
+
 {% block content %} 
 
-<h1>Portada de home.html</h1>
+<main class="container-xl">
+        <!--Carousel-->
+        <div class="row mt-4 mb-4 main-row">
+            <div class="col-md-12 text-center col-centered">
+                <div id="carousel_0" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#carousel_0" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel_0" data-slide-to="1" ></li>
+                        <li data-target="#carousel_0" data-slide-to="2" ></li>
+                    </ul>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="carousel-0-img" src="images/carousel/monitor_msi.png" alt="Monitor MSI">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5 style="color: #73142d; font-weight: bold; padding-right: 350px;">Precio Oferta: 159.990</h5>
+                            </div>   
+                        </div>
+                        <div class="carousel-item">
+                            <img class="carousel-0-img" src="images/carousel/tarjeta_titan.png" alt="Titan GTX">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5 style="color: #73142d; font-weight: bold; padding-right: 350px;">Precio Oferta: 899.990</h5>
+                            </div> 
+                        </div>
+                        <div class="carousel-item">
+                            <img class="carousel-0-img" src="images/carousel/Kingston_HyperX_Alloy_Elite_RGB.png" alt="Kingston HyperX Alloy Elite">
+                            <div class="carousel-caption d-none d-md-block carousel-0-caption">
+                                <h5 style="color: #73142d; font-weight: bold; padding-right: 350px;">Precio Oferta: 99.990</h5>
+                            </div> 
+                        </div>
+                        <div class="carousel-item">
+                            <img class="carousel-0-img" src="images/carousel/Kingston_HyperX_Predator_RGB.png" alt="HyperX Predator">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5 style="color: #73142d; font-weight: bold; padding-right: 350px;">Precio Oferta: 159.990</h5>
+                            </div> 
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel_0" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel_0" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    
+                </div>
+            </div>
+            
+        </div> <!--End Carousel 0-->
+        
+        <!--Carousel of cards (Category)-->
+        <div class="row main-row mt-4 text-center">
+            <!--Titulo-->
+            <!--
+                <h3 class="display-4 index-title">Encuentra tus Productos Aqui</h3>
+            -->
+            <!--Carousel 1-->
+            <div class="row mt-4 main-row">
+                <div class="carousel slide" data-ride="carousel" id="carousel_1">
+                    
+                    <!--indicador-->
+                    <ul class="carousel-indicators carousel-padding">
+                        <li data-target="#carousel_1" data-slide="0" class="active"></li>
+                        <li data-target="#carousel_1" data-slide="1"></li>
+                    </ul>
+                    
+                    <!--Slides-->
+                    <div class="carousel-inner">
+                        <!--Group 1-->
+                        <div class="carousel-item active">
+                            <div class="row carousel-block-group">
+                                <div class="card carousel-block-3">
+                                    <div class="card-header">
+                                        <img src="images/productos/audifonos.png" alt="Audifonos Black Ring">
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title">Audifono Gamer MSI Immerse GH60</h6>
+                                        <p class="card-text d-none d-md-block">Te brindará un sexto sentido para llevarte a la victoria!</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-informacion">Ver más</button>
+                                    </div>
+                                </div>
+                                <div class="card carousel-block-3">
+                                    <div class="card-header">
+                                        <img src="images/productos/placa_madre_asus_intel.png" alt="Placa Madre Asus Strix">
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title">Placa Madre ASUS ROG Strix Z490-H</h6>
+                                        <p class="card-text  d-none d-md-block">Conecta todos los componentes que necesites</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-informacion">Ver más</button>
+                                    </div>
+                                </div>
+                                <div class="card carousel-block-3">
+                                    <div class="card-header">
+                                        <img src="images/productos/I9_9900k.png" alt="Core I9 9990k">
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title">Procesador Intel Core 9900K</h6>
+                                        <p class="card-text  d-none d-md-block">El procesador más potente para Gaming</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-informacion">Ver más</button>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
 
-<a href="/about/"> about </a>
+                        <!--Group 2-->
+                        <div class="carousel-item">
+                            <div class="row carousel-block-group">
+                                <div class="card carousel-block-3">
+                                    <div class="card-header">
+                                        <img src="images/productos/Hyperx_CloudAlpha.png" alt="HyperX CloudAlpha">
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title">Audífono HyperX Cloud Alpha</h6>
+                                        <p class="card-text d-none d-md-block">El mejor audifono calidad precio del mercado que te brindará una increible experiencia</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-informacion">Ver más</button>
+                                    </div>
+                                </div>
+                                <div class="card carousel-block-3">
+                                    <div class="card-header">
+                                        <img src="images/productos/Ryzen9.png" alt="Ryzen 9 3900X">
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title">Procesador AMD RYZEN 9 3900X</h6>
+                                        <p class="card-text  d-none d-md-block">El mejor procesador calidad precio de esta generacion</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-informacion">Ver más</button>
+                                    </div>
+                                </div>
+                                <div class="card carousel-block-3">
+                                    <div class="card-header">
+                                        <img src="images/productos/placa_madre_asus_amd.png" alt="MotherBoard Asus AMD">
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title">Placa Madre ASUS Prime X570-P</h6>
+                                        <p class="card-text  d-none d-md-block">Placa madre de primera calidad para procesadores ryzen, te asegurará un buen rendimiento</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-informacion">Ver más</button>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+
+                    </div>
+                    
+                    <!--Flechas-->
+                    <a class="carousel-control-prev" href="#carousel_1" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel_1" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
+                </div>
+            </div> 
+            <!--Fin Carousel 1-->
+
+            <!--Inicio Carousel 2-->
+            <div class="row main-row pt-5">
+                <div class="carousel slide" data-ride="carousel" id="carousel_2">
+                    
+                    <!--indicador-->
+                    <ul class="carousel-indicators carousel-padding">
+                        <li data-target="#carousel_1" data-slide="0" class="active"></li>
+                        <li data-target="#carousel_1" data-slide="1"></li>
+                    </ul>
+                    
+                    <!--Slides-->
+                    <div class="carousel-inner">
+                        <!--Group 1-->
+                        <div class="carousel-item active">
+                            <div class="row carousel-block-group">
+                                <div class="card carousel-block-3">
+                                    <div class="card-header">
+                                        <img src="images/categorias/sillas.png" alt="Audifonos Black Ring">
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title">Silla Cougar Armor One Blue</h6>
+                                        <p class="card-text d-none d-md-block">COUGAR Armor One te trae la comodidad que necesitas para disfrutar completamente de largas sesiones de juego</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-informacion">Ver más</button>
+                                    </div>
+                                </div>
+                                <div class="card carousel-block-3">
+                                    <div class="card-header">
+                                        <img src="images/productos/Evga1000.png" alt="Placa Madre Asus Strix">
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title">Fuente de poder EVGA1000GQ</h6>
+                                        <p class="card-text  d-none d-md-block">Compra la fuente de poder mas potente del mercado 80 plus gold!, esta fuente proveerá la energía suficiente para todo tu equipo!</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-informacion">Ver más</button>
+                                    </div>
+                                </div>
+                                <div class="card carousel-block-3">
+                                    <div class="card-header">
+                                        <img src="images/productos/1565111236279-65878318_5497799582-removebg-preview.png" alt="Core I9 9990k">
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title">Monitor gaming ASUS VP247H</h6>
+                                        <p class="card-text  d-none d-md-block">Monitor Full HD de 23,6” con 1 ms de tiempo de respuesta para eliminar las imágenes borrosas y ofrecer una acción totalmente fluida</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-informacion">Ver más</button>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+
+                        <!--Group 2-->
+                        <div class="carousel-item">
+                            <div class="row carousel-block-group">
+                                <div class="card carousel-block-3">
+                                    <div class="card-header">
+                                        <img src="images/productos/msi_rtx_2060.png" alt="HyperX CloudAlpha">
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title">Tarjeta de video MSI RTX 2060</h6>
+                                        <p class="card-text d-none d-md-block">Ten la ventaja competitiva que necesitas en tus juegos Online con NVDIA GeForce con esos FPS adicionales!</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-informacion">Ver más</button>
+                                    </div>
+                                </div>
+                                <div class="card carousel-block-3">
+                                    <div class="card-header">
+                                        <img src="images/productos/RamTridentz.png" alt="Ryzen 9 3900X">
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title">Memoria RAM G.SKILL TRIDENT Z RGB</h6>
+                                        <p class="card-text  d-none d-md-block">Memoria RAM con RGB?! OMG NO PUEDES IRTE SIN LA TUYA! QUEDAN POCAS UNIDADES! SÉ EL DIÓS DEL RGB!</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-informacion">Ver más</button>
+                                    </div>
+                                </div>
+                                <div class="card carousel-block-3">
+                                    <div class="card-header">
+                                        <img src="images/productos/RazerTeclado.png" alt="MotherBoard Asus AMD">
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title">Teclado Gamer Razer Ornata Chroma</h6>
+                                        <p class="card-text  d-none d-md-block">El teclado Gamer de tus sueños, el cual posee el RGB mas personalizable del mercado y switches de membrana-mecánica</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-informacion">Ver más</button>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+
+                    </div>
+                    
+                    <!--Flechas-->
+                    <a class="carousel-control-prev" href="#carousel_2" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel_2" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
+                </div>
+            </div> 
+            <!--Fin Carousel 2-->
+
+            .
+
+        </div>
+
+        <!--Categorias-->
+        <div class="row mt-4 mb-4">
+            <!--1 Monitores-->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
+                <a class="categoria-link" href="monitores.html">
+                    <div class="card categoria-card">
+                        <img class="card-img-top categoria-card-img" src="images/Monitores/Asus.png" alt="Card Image">
+                        <div class="card-img-overlay categoria-card-overlay">
+                            <h4 class="card-title categoria-card-title">Monitores</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--2 Tarjeta de video-->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
+                <a class="categoria-link" href="graficas.html">
+                    <div class="card categoria-card">
+                        <img class="card-img-top categoria-card-img" src="images/productos/evga_rtx_2060.png" alt="Card Image">
+                        <div class="card-img-overlay categoria-card-overlay">
+                            <h4 class="card-title categoria-card-title">Tarjetas de Video</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--3 RAM-->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
+                <a class="categoria-link" href="memoria_ram.html">
+                    <div class="card categoria-card">
+                        <img class="card-img-top categoria-card-img" src="images/productos/RamTridentz.png" alt="Card Image">
+                        <div class="card-img-overlay categoria-card-overlay">
+                            <h4 class="card-title categoria-card-title">Memorias RAM</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--4 Procesador-->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
+                <a class="categoria-link" href="procesadores.html">
+                    <div class="card categoria-card">
+                        <img class="card-img-top categoria-card-img" src="images/productos/I9_9900k.png" alt="Card Image">
+                        <div class="card-img-overlay categoria-card-overlay">
+                            <h4 class="card-title categoria-card-title">Procesadores</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--5 Placas Madre-->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
+                <a class="categoria-link" href="placas_madre.html">
+                    <div class="card categoria-card">
+                        <img class="card-img-top categoria-card-img" src="images/productos/placa_madre_asus_intel.png" alt="Card Image">
+                        <div class="card-img-overlay categoria-card-overlay">
+                            <h4 class="card-title categoria-card-title">Placas Madre</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--6 Teclados-->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
+                <a class="categoria-link" href="teclados.html">
+                    <div class="card categoria-card">
+                        <img class="card-img-top categoria-card-img" src="images/productos/RazerTeclado.png" alt="Card Image">
+                        <div class="card-img-overlay categoria-card-overlay">
+                            <h4 class="card-title categoria-card-title">Teclados</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--7 Mouse-->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
+                <a class="categoria-link" href="mouse.html">
+                    <div class="card categoria-card">
+                        <img class="card-img-top categoria-card-img" src="images/productos/mouse_hyperx.png" alt="Card Image">
+                        <div class="card-img-overlay categoria-card-overlay">
+                            <h4 class="card-title categoria-card-title">Ratones</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--8 Almacenamiento-->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
+                <a class="categoria-link" href="almacenamiento.html">
+                    <div class="card categoria-card">
+                        <img class="card-img-top categoria-card-img" src="images/productos/HDD_toshiba.png" alt="Card Image">
+                        <div class="card-img-overlay categoria-card-overlay">
+                            <h4 class="card-title categoria-card-title">Almacenamientos</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--9 Audifonos-->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
+                <a class="categoria-link" href="audifonos.html">
+                    <div class="card categoria-card">
+                        <img class="card-img-top categoria-card-img" src="images/productos/Hyperx_CloudAlpha.png" alt="Card Image">
+                        <div class="card-img-overlay categoria-card-overlay">
+                            <h4 class="card-title categoria-card-title">Audifonos</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--10 Fuentes de Poder-->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
+                <a class="categoria-link" href="fuentes_de_poder.html">
+                    <div class="card categoria-card">
+                        <img class="card-img-top categoria-card-img" src="images/productos/Evga1000.png" alt="Card Image">
+                        <div class="card-img-overlay categoria-card-overlay">
+                            <h4 class="card-title categoria-card-title">Fuentes de Poder</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--11 Gabinetes-->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
+                <a class="categoria-link" href="gabinetes.html">
+                    <div class="card categoria-card">
+                        <img class="card-img-top categoria-card-img" src="images/productos/gabinete_aerocool.png" alt="Card Image">
+                        <div class="card-img-overlay categoria-card-overlay">
+                            <h4 class="card-title categoria-card-title">Gabinetes</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <!--Fin Categorias-->
+    </main>
+
+    <!--End Main-->
 
 {% endblock %}

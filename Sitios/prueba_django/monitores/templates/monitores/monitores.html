@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block tab_title %}Monitores{% endblock %}
+{% block content %} 
+    {% for monitor in monitores %}
+        <div class="row">
+            <div class="item">
+                <div class="card">
+                    <img class="card-img custom-img" src="{{monitor.image.url}}"  alt="Responsive image">
+                    <h1 class="card-title custom-title">
+                        {{monitor.tittle}}
+                    </h1>
+                    <p class="card-text custom-text">
+                        {{monitor.description}}
+                    </p>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="custom-precio-activo col-6">
+                                {{monitor.price}}
+                        </div>
+                        <div class="col-5">
+                            <button class="btn btn-compra">Comprar</button>
+                            <button class="btn btn-informacion">Info</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

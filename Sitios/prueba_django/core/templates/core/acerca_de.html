@@ -1,0 +1,110 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block css_custom %}
+<link rel="stylesheet" href="{% static 'core/css/acerca_de.css' %}">
+{% endblock %}
+{% block tab_title %}Acerca de nosotros{% endblock %}
+{% block content %} 
+<main class="container text-custom-white bg-custom-dark mt-5 mb-5">
+    <div class="row row-custom text-custom-light">
+        <h1 class="col-12 mb-5" style="color: white;">Nuestra tienda</h1>
+        <img src="{% static 'core/images/HH.png' %}" id="logo" alt="logo" class="img-fluid col-6">
+        <div class="parrafo-acerca-de col-6">
+        <p style="color: white;">Hardcore Hardware es una tienda online dedicada a la venta de computadores y accesorios gamers, que brinda servicios especializados a sus clientes mediante el asesoramiento para la entrada al mundo de los videos juegos, accesibilidad a las multiplataformas y desarrollo tecnológico.</p>
+        <p style="color: white;">Dicho asesoramiento tiene como objetivo responder a las necesidades individuales de cada cliente, entregando la mejor opción en servicio, calidad, armado y presupuesto en toda la gama de productos disponibles para armar un espacio gamer.</p>       
+        <p style="color: white;">Lo que en 2019 nació como una pequeña tienda de servicios y armados de PC, hoy se ha convertido en una empresa enfocada en poder brindar a sus clientes una experiencia de servicio con productos de primera calidad reconocidos a nivel mundial en las áreas de tecnologías y los e-sports, cumpliendo con las exigencias del mercado para que los clientes disfruten de una experiencia satisfactoria.</p>
+        </div>
+        <h1 class="title col-12 mt-4" style="color: white;">Quienes Somos</h1>
+        <div class="col-12 col-md-6 col-xl-3 mt-3 mb-3">
+            <div class="card bg-custom-black px-1">
+                <div class="card-header">
+                    <img class="card-img-top" src="{% static 'core/images/perfil/seba_foto.jpeg' %}" alt="Imagen Persona 1">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Sebastian Groselj</h3>
+                    <h6 class="card-text text-custom-white">
+                        Ingeniero Informático
+                    </h6>
+                    <div class="card-text nosotros-roles">
+                        <ul class="acerca-list-group nosotros-roles">
+                            <li>Cofundador</li>
+                            <li>Programador</li>
+                            <li>Administrador de Base de Datos</li>
+                            <li>Cyberseguridad</li>
+                            <li>Logistica</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3 mt-3 mb-3">
+            <div class="card bg-custom-black px-1">
+                <div class="card-header">
+                        <img class="card-img-top" src="{% static 'core/images/perfil/Benjamin_Arias.jpg' %}" alt="Imagen Persona 1">
+                    </div>
+                    <div class="card-body">    
+                        <h3 class="card-title">Benjamín Arias</h3>
+                        <h6 class="card-text text-custom-white">
+                            Ingeniero Informático
+                        </h6>
+                        <div class="card-text nosotros-roles">
+                            <ul class="acerca-list-group nosotros-roles">
+                                <li>Cofundador</li>
+                                <li>Programador</li>
+                                <li>Diseñador</li>
+                                <li>Gestor de redes sociales</li>
+                                <li>Asegurador de calidad</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="col-12 col-md-6 col-xl-3 mt-3 mb-3">
+            <div class="card bg-custom-black px-1">
+                <div class="card-header">
+                        <img class="card-img-top" src="{% static 'core/images/perfil/pepega_irl.jpg' %}" alt="Imagen Persona 1">
+                    </div>
+                    <div class="card-body">    
+                        <h3 class="card-title">Piero Molina</h3>
+                        <h6 class="card-text text-custom-white">
+                            Ingeniero Informático
+                        </h6>
+                        <div class="card-text nosotros-roles">
+                            <ul class="acerca-list-group nosotros-roles">
+                                <li>Cofundador</li>
+                                <li>Programador</li>
+                                <li>Diseñador</li>
+                                <li>Streamer</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="col-12 col-md-6 col-xl-3 mt-3 mb-3">
+            <div class="card bg-custom-black px-1">
+                <div class="card-header">
+                        <img class="card-img-top" src="{% static 'core/images/perfil/Ivo_Araneda.png' %}" alt="Imagen Persona 1">
+                    </div>
+                    <div class="card-body">    
+                        <h3 class="card-title">Ivo Araneda</h3>
+                        <h6 class="card-text text-custom-white">
+                            Ingeniero Informático
+                        </h6>
+                        <div class="card-text nosotros-roles">
+                            <ul class="acerca-list-group nosotros-roles">
+                                <li>Cofundador</li>
+                                <li>Programador</li>
+                                <li>Servicio al cliente</li>
+                                <li>Gestor de productos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>        
+</div>
+
+{% endblock %}

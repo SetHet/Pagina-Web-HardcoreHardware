@@ -1,6 +1,6 @@
 //Parametros
 const classOfferTitle = 'offer-title';
-const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 //Evento
 $(document).ready(function(){
@@ -29,7 +29,7 @@ function ActualizarOfertaTime(){
 function ActualizarTitulo(){
     var time = new Date();
     
-    var str =  'Black ' + daysOfWeek[time.getDay()] + '!';
+    var str =  'Black ' + daysOfWeek[time.getDay() - 1] + '!';
 
     var titles = document.getElementsByClassName(classOfferTitle);
     for(var i = 0; i < titles.length; i++){

@@ -93,6 +93,7 @@
     <!--Start Contenido-->
     <main>
         {% block content %} {% endblock %}
+        {{request.path}}
     </main>
     <!--End Contenido-->
 
@@ -133,7 +134,9 @@
                         <li>Dolares: <span class="valorDolar"></span></li>
                         <li>Euros: <span class="valorEuro"></span></li>
                         <li>UF: <span class="valorUF"></span></li>
-                        <li><a class="footer-link" href="{% url 'calc' %}" target="_blank">Calcular</a></li>
+                        {% if request.path != '/calc/' %}
+                            <li><a class="footer-link" href="{% url 'calc' %}" target="_blank">Calcular</a></li>
+                        {% endif %}
                     </ul>
                 </div>
 

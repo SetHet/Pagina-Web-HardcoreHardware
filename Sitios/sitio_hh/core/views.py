@@ -12,5 +12,3 @@ def about(request):
 def calc(request):
     return render(request, "core/calc.html")
 
-def search(request):
-    return render(request, "core/search.html")

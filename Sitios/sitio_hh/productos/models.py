@@ -10,7 +10,7 @@ class Categoria(models.Model):
 class Producto(models.Model):
     name = models.CharField(max_length=100)
     descripcion = models.TextField()
-    image = models.ImageField()
+    image = models.ImageField(upload_to="productos")
 
     created = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)

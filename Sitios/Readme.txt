@@ -1,7 +1,9 @@
 Descripcion
 
-    Sitio web oficial: sitio_hh
-    Super usuarios:
+    Sitio web oficial: prueba_django
+	
+
+    Super usuarios de sitio_hh:
         admin : 1234    
 
 Instrucciones

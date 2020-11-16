@@ -65,8 +65,8 @@
                         <a class="nav-link dropdown-toggle" href="#" id="nadbarDropdown" 
                         data-toggle="dropdown">Categorias</a>
                         <div class="dropdown-menu dropdown-menu-md-right">
-                            <a class="dropdown-item" href="monitores.html" target="_top">Monitores</a>
-                            <a class="dropdown-item" href="graficas.html" target="_top">Tarjetas de video</a>
+                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AMonitores" target="_top" get=>Monitores</a>
+                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AGPU" target="_top">Tarjetas de video</a>
                             <a class="dropdown-item" href="memoria_ram.html" target="_top">Memorias RAM</a>
                             <a class="dropdown-item" href="procesadores.html" target="_top">Procesadores</a>
                             <a class="dropdown-item" href="placas_madre.html" target="_top">Placas Madres</a>

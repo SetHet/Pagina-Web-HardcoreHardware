@@ -14,13 +14,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- CSS FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <!--CSS Personalizado-->
+    <!--CSS Base-->
     <link rel="stylesheet" href="{% static 'core/css/style_base.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/header.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/footer.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/guias.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/categorias.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+    <!--CSS Personalizado-->
+    {% block css_custom %}
+    
+    {% endblock %}
     <!--End CSS-->
 </head>
 <body>
@@ -50,13 +51,13 @@
                         <a class="nav-link" href="{% url 'guias' %}" target="_top">Guias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}" target="_top">Moneda</a>
+                        <a class="nav-link" href="{% url 'valor_moneda' %}" target="_top">Moneda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}"target="_top">Acerca de</a>
+                        <a class="nav-link" href="{% url 'about' %}"target="_top">Acerca de</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}" target="_top">Acceder</a>
+                        <a class="nav-link" href="{% url 'login' %}" target="_top">Acceder</a>
                     </li>
                     <li class="nav-item dropdown show">
                         <a class="nav-link dropdown-toggle" href="#" id="nadbarDropdown" 
@@ -91,9 +92,12 @@
 
 
     <!--Start Contenido-->
+
+
     <main class="container-xl mt-4 mb-4">
         {% block content %} {% endblock %}
     </main>
+
     <!--End Contenido-->
 
 
@@ -163,5 +167,8 @@
     <script src="{% static 'core/js/price.js' %}"></script>
     <script src="{% static 'core/js/guias.js' %}"></script>
     <!--End Custom Scripts-->
+    {% block js_custom %}
+    
+    {% endblock %}
 </body>
 </html>

@@ -23,6 +23,9 @@ urlpatterns = [
     path('', core_views.home, name='home'),
     path('guias/', core_views.guias, name='guias'),
     path('monitores/',monitores_views.monitor, name='monitores'),
+    path('about/', core_views.about, name='about'),
+    path('calcularPrecio/', core_views.valorMoneda, name='valor_moneda'),
+    path('login/', core_views.login, name='login'),
 ]
 if settings.DEBUG: 
     from django.conf.urls.static import static

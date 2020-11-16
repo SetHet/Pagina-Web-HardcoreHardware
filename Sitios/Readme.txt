@@ -24,7 +24,11 @@ Instrucciones
     Crear nueva aplicacion
     >> python manage.py startapp core
 
-Historial de comandos
+    Migrar models a la BD
+    >> python manage.py makemigrations nombre_app_bd
+    >> python manage.py migrate nombre_app_bd
+
+Historial de comandos sitio_hh
 
 >> django-admin startproject sitio_hh
 >> cd sitio_hh
@@ -37,5 +41,9 @@ Historial de comandos
 >>>> 1234
 >>>> 1234
 >> python manage.py startapp core
-
 >> python manage.py runserver
+// Creando la base de datos
+>> python manage.py startapp productos
+    internamente editar productos/models.py
+>> python manage.py makemigrations productos
+>> python manage.py migrate productos

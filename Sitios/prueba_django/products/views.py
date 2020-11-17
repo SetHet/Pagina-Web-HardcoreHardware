@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Categoria, Producto
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def search(request):

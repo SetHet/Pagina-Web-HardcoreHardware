@@ -34,7 +34,7 @@
             <a class="navbar-brand" href="{% url 'home' %}" target="_top">
                 <img class="nav-icon" src="{% static 'core/images/HH.png' %}" alt="logo">  
             </a>
-            <a class="navbar-brand" href="index.html" target="_top">
+            <a class="navbar-brand" href="{% url 'home' %}" target="_top">
                 <span class="navbar-title">Hardcore Hardware</span>
             </a>
             
@@ -118,7 +118,7 @@
             <nav class="row text-center">
                 <div class="col-12 col-sm-6 col-md-3 footer-col">
                     <div class="col footer-bloque">
-                        <a href="index.html" class="text-reset-uppercase" target="_top">
+                        <a href="{% url 'home' %}" class="text-reset-uppercase" target="_top">
                             <img class="footer-icon" src="{% static 'core/images/HH.png' %}" alt="logo" style="height: 120px; width: 120px;">  
                         </a>
                     </div>
@@ -135,10 +135,10 @@
                 <div class="col-12 col-sm-6 col-md-3 footer-col">
                     <ul class="list-unstyled">
                         <li class="font-weight-bold text-uppercase">Páginas</li>
-                        <li><a href="index.html" target="_top" class="text-reset footer-link">Inicio</a></li>
-                        <li><a href="guias.html" target="_top" class="text-reset footer-link">Guias</a></li>
-                        <li><a href="contacto.html" target="_top" class="text-reset footer-link">Contacto</a></li>
-                        <li><a href="acerca_de.html" target="_top" class="text-reset footer-link">Acerca de</a></li>
+                        <li><a href="{% url 'home' %}" target="_top" class="text-reset footer-link">Inicio</a></li>
+                        <li><a href="{% url 'guias' %}" target="_top" class="text-reset footer-link">Guias</a></li>
+                        <li><a href="https://www.google.cl" class="text-reset footer-link">Contacto</a></li>
+                        <li><a href="{% url 'about' %}" target="_top" class="text-reset footer-link">Acerca de</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-sm-6 col-md-3 footer-col">
@@ -147,7 +147,9 @@
                         <li>Dolares: <span class="valorDolar"></span></li>
                         <li>Euros: <span class="valorEuro"></span></li>
                         <li>UF: <span class="valorUF"></span></li>
-                        <li><a class="footer-link" href="calcular_precio.html" target="_blank">Calcular</a></li>
+                        {% if request.path != '/calcularPrecio/' %}
+                        <li><a class="footer-link" href="{% url 'valor_moneda' %}" target="_blank">Calcular</a></li>
+                        {% endif %}
                     </ul>
                 </div>
 

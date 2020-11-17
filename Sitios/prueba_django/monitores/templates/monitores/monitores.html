@@ -1,5 +1,8 @@
 {% extends 'core/base.html' %}
 {% load static %}
+{% block css_custom %}
+<link rel="stylesheet" href="{% static 'core/css/categorias.css' %}">
+{% endblock %}
 {% block tab_title %}Monitores{% endblock %}
 {% block content %} 
     {% for monitor in monitores %}

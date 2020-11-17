@@ -1,270 +1,244 @@
 {% extends 'core/base.html' %}
 {% load static %}
+{% block css_custom %}
+<link rel="stylesheet" href="{% static 'core/css/guias.css' %}">
+{% endblock %}
 {% block tab_title %}Guias{% endblock %}
 {% block content %} 
-        <div class="row text-custom-white">
-            <div class="col-12 bg-custom-dark p-0 pt-2 guias-col-left">
-                <h3  class="text-center">Secciones</h3>
-                
-                <hr>
-                <button class="btn btn-custom" onclick="EnableSection('guia-section-1');">
-                    Componentes
-                </button>
-                <hr>
-                <button class="btn btn-custom" onclick="EnableSection('guia-section-2');">
-                    Compras
-                </button>
-                <hr>
-                <button class="btn btn-custom" onclick="EnableSection('guia-section-3');">
-                    Conectores
-                </button>
-                <hr>
+<div class="row text-custom-white">
+<div class="col-12 bg-custom-dark p-0 pt-2 guias-col-left">
+    <h3  class="text-center">Secciones</h3>
+    
+    <hr>
+    <button class="btn btn-custom" onclick="EnableSection('guia-section-1');">
+        Componentes
+    </button>
+    <hr>
+    <button class="btn btn-custom" onclick="EnableSection('guia-section-2');">
+        Compras
+    </button>
+    <hr>
+    <button class="btn btn-custom" onclick="EnableSection('guia-section-3');">
+        Conectores
+    </button>
+    <hr>
 
-            </div>
-            <div class="col-12 bg-custom-shadow">
-                <!--Guia Section 1-->
-                <div class="guia-section" id="guia-section-1">
-                    
-                    <h1>Componentes</h1>
-                    <br>
-                    
-                    <div> <!--Primer Componente-->
-
-                        <h3>CPU</h3>
-                        <p>
-                            Unidad de Procesamiento Central. 
-                            Encargado del calculo general del sistema. 
-                            En Video Juegos Influye en la taza de frames.
-                        </p>
-                        <p>
-                            Hay mucho tipos de CPU, principalmente x86, x86-64, ARM...
-                            Enfocados en x86-64, hay 2 compañias principales: 
-                            <br>
-                            INTEL con sus productos Core, Pentium, Celeron.
-                            <br>
-                            AMD con sus FX, Ryzen, Threadriper, Rome.
-                        </p>
-                        <p>
-                            Estos tienen como principal caracteristicas de rendimiento la frecuencia (Ciclos por segundo, Ej. 5.2 Ghz) 
-                            y el IPC (Instrucciones por ciclo, que suelen aumentar entre 3% a 20% por generacion).
-                        </p>
-                        <p>
-                            Compatibilidad: Requiere de una MotherBoard y RAM compatibles. Por parte de la Motherboard requiere que el socket tenga la misma distribucion de pines y el Chipset lo reconosca. Por parte de la RAM, esta usualmente es compatible, pero algunas pueden dar problemas. Los manuales de los productos sale la compatibilidad de estos.
-                        </p>
-                        
-                        <div class="row">
-                            <img src="{% static 'core/images/productos/i7_9700k.png' %}" alt="" class="img-fluid img-guia">
-                            <img src="{% static 'core/images/productos/I9_9900k.png' %}" alt="" class="img-fluid img-guia">
-                            <img src="{% static 'core/images/productos/Ryzen9.png' %}" alt="" class="img-fluid img-guia">
-                        </div>
-
-                        
-                    </div>
-                    <hr>
-
-                    <div>
-                        <!--Segundo Componente-->
-                    
-                        <h3>MotherBoard</h3>
-                        <p>
-                            Es la Placa Madre del sistema. 
-                            En este se conectan el resto de componenentes (CPU, RAM, GPU, SSD, HDD, Gabinete, etc.)
-                        </p>
-                        
-                        <p>
-                            Existen de distintas ensambladoras y gamas. Debemos buscar la que mas se adapte a nuestras necesidades
-                        </p>
-                        <p>
-                            Compatibilidad:Este punto es muy importante elegirlo bien, ya que debemos asegurarnos de que tanto el procesador, memoria ram, y Almacenamiento escodigo sean 
-                            compatibles con nuestra placa madre. Además debe caer en nuestro gabinete.
-                        </p>
-
-                        <div class="row">
-                            <img src="{% static 'core/images/productos/placa_madre_asus_amd.png' %}" alt="" class="img-fluid img-guia">
-                            <img src="{% static 'core/images/productos/placa_madre_asus_intel.png' %}" alt="" class="img-fluid img-guia">
-                            <img src="{% static 'core/images/productos/ROGSTRIXZ490-HGAMING-removebg-preview.png' %}" alt="" class="img-guia">
-                        </div>
-                    
-                    </div>
-                    <hr>
-
-                    <div>
-                        <!--Tercer Componente-->
-                    
-                        <h3>RAM</h3>
-                        <p>
-                            a memoria ram(random access memories) es una memoria volatil que se le cargan las Instrucciones que ejecuta el procesador y otras partes del computador
-                        esta memoria al ser volatil al apagarse se pierde todo lo almacenado.
-                            <br>
-                            Existen de distincia frecuencia, tamaño  formato y capacidad..
-                        </p>
-                        <p>
-                            Compatibilidad:Se requiere una placa madre compatible con las memorias ya sea ddr2, ddr3 o ddr4 y en el caso de ryzen hay memorias ram que no son compatibles con esta arquitectura a pesar de ser dd4
-                            Tambien debemos fijarnos en su formato, para notebook es SO-DIMM y para escritorio DIMM.
-                            
-                        </p>
-                    
-                    
-                        <div class="row">
-                            <img src="{% static 'core/images/productos/ram_tridentz_royal.png' %}" alt="" class="img-guia">
-                            <img src="{% static 'core/images/productos/RamTridentz.png' %}" alt="" class="img-guia">
-                            
-                        </div>
-                    
-                    </div>
-                    <hr>
-
-                    <div>
-                        <!--Cuarto Componente-->
-                    
-                        <h3>Tarjeta de video (GPU)</h3>
-                        <p>
-                            La tarjeta de video es esencial si queremos dedicarnos a jugar o edicion de videos/fotos con nuestro computador. podriamos separarlas en 2 tipos
-                            las de gaming y las profesionales. 
-                            <br>
-                            Por otro lado se separan en Nvidia y amd aqui mas que nada es un gusto personal la que debemos elegir y comprar la que se adapte a nuestras necesidades y presupuesto
-                        </p>
-                        <p>
-                            Compatibilidad: Todas son compatibles con cualquier procesador para la placa madre cualquiera que posea un pcie-express de x16 para sacar el maximo provecho a esta misma
-                            tambien debemos fijarnos que nuestra fuente de poder posea las entradas de alimentacion correspondientes para esta. Y por supuesto no tener cuello de botella  
-                        </p>
-                    
-                        <div class="row">
-                            <img src="{% static 'core/images/productos/msi_rtx_2060.png' %}" alt="" class="img-guia">
-                            <img src="{% static 'core/images/productos/evga_rtx_2060.png' %}" alt="" class="img-guia">
-                        </div>
-                    
-                    </div>
-                    <hr>
-                
-                    <div>
-                        <!--Quinto Componente-->
-                    
-                        <h3>Almacenamiento</h3>
-                        <p>
-                        
-                            Nuestro sistema de almacenamiento es fundamental para el armado del computador, ya que aqui es donde se guardaran todos nuestros datos, archivos y programas.
-                            <br>
-
-                            Aqui tenemos muchas opciones para elegir podemos ir desde lo mas clasico un disco duro(HDD), o ya si queremos algo mas de velocidade al iniciar nuestro sistema operativo y cargar ciertos programas esenciales
-                            podemos optar por un SSD(Solid State Drive).Estos son hasta 10 veces mas rapidos que un disco duro tradicional y nos ahorraremos el estar esperando que nuestra pc carge todo, ya que esto tardara menos de 1 minuto
-                            por otro lado ya tenemos los m.2. ya sea en su version sata o pcie debemos ver que nuestra placa soporte este tipo de dispositivos.
-                        </p>
-                        <p>
-                            Compatibilidad:Actualmente casi todos los discos duros y ssd son compatibles con la mayoria de placas madres del mercado, por otro lado como ya se menciono
-                            los m.2 sata o pcie son soportados solo por algunas placas y generaciones de procesadores asi que debemos revisar si nuestra placa y procesador lo aceptan 
-                            antes de hacer esta compra
-                        </p>
-                        
-                        <div class="row">
-                            <img src="{% static 'core/images/productos/m.2.png' %}" alt="" class="img-guia">
-                            <img src="{% static 'core/images/productos/HDD_toshiba.png' %}" alt="" class="img-guia">
-                        </div>
-                    
-                    </div>
-                    <hr>                
-                    
-                    <div>
-                        <!--Sexto Componente-->
-                    
-                        <h3>Fuente de poder(PSU)</h3>
-                        <p>
-                            Todos nuestros componentes consumen una cantidad de watts distinta, asi que debemos revisar bien cuanto es lo que necesitaremos y dejar un margen en caso de algun fallo en el sistema electrico
-                            para esto debemos elegir una buena fuente de poder. Hay 2 tipos de fuentes las normales y modulares las modulares nos permiten quitar los cables que no necesitaremos
-                            las normales no, asi que quedaran en el gabibente y recomendamos amarrarlos para que no estorben nuestro flujo de aire.
-                            <br>
-                            Hay muchas personas que compran fuentes de baratas por que ofrecen muchos watts, pero no son seguras. Siempre debemos fijarnos en la certificacion de estas, Para ello 
-                            se recomienda para un pc de gama media una fuente de unos 500w-600w con certificacion 80+ Bronze con eso deberiamos poder levantar cualquier configuracion de gama media
-                            existen otros tipos de certificaciones que dependen de la gama de la fuente y su uso                    </p>
-                        <p>
-                            Compatibilidad:Todas las fuentes certificadas deberian servirnos para cualquier terminal armado, pero en configuraciones extremas de gama alta puede que nos falten algunos compatibles
-                            para lo cual deberemos usar adaptadores o en caso de tener una fuente modular adquirirlos apartea  
-                        </p>
-                    
-                        <div class="row">
-                            <img src="{% static 'core/images/productos/Evga1000.png' %}" alt="" class="img-guia">
-                            <img src="{% static 'core/images/productos/EVGA850.png' %}" alt="" class="img-guia">
-                        </div>
-                    
-                    </div>
-                    <hr>
-
-                    <div>
-                        <!--Septimo Componente-->
-                    
-                        <h3>Gabinete</h3>
-                        <p>
-                            Aqui es donde elejimos nuestro gabinete hay muchas opciones, ya sea en marcas, tamaños y diseños. solo queda escoger el que mas nos gusta
-                            <br>
-                            Hay algunos que traen fuente de poder instalada estos no los recomendamos.    
-                        </p>
-                        <p>
-                            Compatibilidad:Solo debemos fijarnos en que el gabinete soporte nuestro tamaño de placa ya sea micro itx, atx o extended atx y que el largo sea el suficiente
-                            para nuestra tarjeta.
-                        </p>
-                    
-                        <div class="row">
-                            <img src="{% static 'core/images/productos/gabinete_aerocool.png' %}" alt="" class="img-guia">
-                            <img src="{% static 'core/images/productos/gabinete_asus.png' %}" alt="" class="img-guia">
-                        </div>
-                    
-                    </div>
-
-                    </div> <!--Fin Guia Section 1-->
+</div>
+<div class="col-12 bg-custom-shadow">
+    <!--Guia Section 1-->
+    <div class="guia-section" id="guia-section-1"> 
+        <h1>Componentes</h1>
+        <br>
+        <div> <!--Primer Componente-->
+            <h3>CPU</h3>
+            <p>
+                Unidad de Procesamiento Central. 
+                Encargado del calculo general del sistema. 
+                En Video Juegos Influye en la taza de frames.
+            </p>
+            <p>
+                Hay mucho tipos de CPU, principalmente x86, x86-64, ARM...
+                Enfocados en x86-64, hay 2 compañias principales: 
+                <br>
+                INTEL con sus productos Core, Pentium, Celeron.
+                <br>
+                AMD con sus FX, Ryzen, Threadriper, Rome.
+            </p>
+            <p>
+                Estos tienen como principal caracteristicas de rendimiento la frecuencia (Ciclos por segundo, Ej. 5.2 Ghz) 
+                y el IPC (Instrucciones por ciclo, que suelen aumentar entre 3% a 20% por generacion).
+            </p>
+            <p>
+                Compatibilidad: Requiere de una MotherBoard y RAM compatibles. Por parte de la Motherboard requiere que el socket tenga la misma distribucion de pines y el Chipset lo reconosca. Por parte de la RAM, esta usualmente es compatible, pero algunas pueden dar problemas. Los manuales de los productos sale la compatibilidad de estos.
+            </p>
             
-                    <!--Guia Section 2-->
-                    <div class="guia-section" id="guia-section-2">
-                        <p>
-                            Siempre recomendamos que al momento de comprar tengamos claro nuestro presupuesto, Y que tengamos un balance de nuestros
-                            componentes para evitar el cuello de botella. 
-                        </p>
-                        <p>
-                            Invertir correctamente nuestro dinero en los componentes que se ajusten a 
-                            nuestras necesidades y no obviar en los componentes esenciales de nuestra computadora, como lo podria ser la 
-                            fuente de poder y placa madre. Mucha gente invierte poco en estos componentes siendo de los mas importantes.
-                        </p>
-                        <p>
-                            Al actualizar algun componente de una computadora, hay que revisar la compatibilidad. 
-                        </p>
-                        <hr>
-                        <h5>CPU</h5>
-                        <p>
-                            Al actualizar el CPU hay que revisar que la MotherBoard posea
-                            un Socket compatible y que sus controladores sean los correctos, 
-                            ademas la ram debe trabajar a la velocidad minima necesaria por el procesador.
-                        </p>
-                        <hr>
-                        <h5>GPU</h5>
-                        <p>
-                            Al actualizar la GPU no es mayor problema, ya que todas los conectores de GPU actualmente siendo PCIx16 son entre ellos compatibles.
-                        </p>
-                        <hr>
-                        <h5>Almacenamiento</h5>
-                        <p>
-                            Al hacer cambios en almacenamiento hay 2 puntos a considerar con la MotherBoard: Que tenga el conector compatible y que este no se desactive o desactive otros
-                            compontes conectados, esto ultimo por la cantidad limitada de carriles PCI.
-                        </p>
-                        <br>
-                    </div>
-                     <!--Fin Guia Section 2-->
-
-                     <!--Guia Section 3-->
-                    <div class="guia-section" id="guia-section-3">
-                        <p> Siempre surgen dudas al momento de armar nuestra computadora por primera vez, y se nos complican algunos conectores
-                            Nunca debemos hacer que las cosas entren por la fuerza, si no podremos dañar alguno de los componentes de la computadora. <br>
-                            <br>
-                            Una parte muy odiada por muchos es el panel frontal del gabinete con la placa madre. Ya que son muchos conectores y pequeños
-                            esto llega a desesperar a mas de alguno en su primer armado.  <br>
-                            <br>
-                            Generalmente La nomenclatura de las conecciónes va mirando hacia abajo y las pocisiones y orden estan especificadas arriba del panel.
-                            De igual forma se recomienda revisar el manual de la placa donde especifica hacia donde van los cables y su posición.
-                         </p>
-                    </div>
- <!--fin Guia Section 2-->
-
-                     
-                </div>
+            <div class="row">
+                <img src="{% static 'core/images/productos/i7_9700k.png' %}" alt="" class="img-fluid img-guia">
+                <img src="{% static 'core/images/productos/I9_9900k.png' %}" alt="" class="img-fluid img-guia">
+                <img src="{% static 'core/images/productos/Ryzen9.png' %}" alt="" class="img-fluid img-guia">
             </div>
+            
+        </div>
+        <hr>
+        <div>
+            <!--Segundo Componente-->
+        
+            <h3>MotherBoard</h3>
+            <p>
+                Es la Placa Madre del sistema. 
+                En este se conectan el resto de componenentes (CPU, RAM, GPU, SSD, HDD, Gabinete, etc.)
+            </p>
+            
+            <p>
+                Existen de distintas ensambladoras y gamas. Debemos buscar la que mas se adapte a nuestras necesidades
+            </p>
+            <p>
+                Compatibilidad:Este punto es muy importante elegirlo bien, ya que debemos asegurarnos de que tanto el procesador, memoria ram, y Almacenamiento escodigo sean 
+                compatibles con nuestra placa madre. Además debe caer en nuestro gabinete.
+            </p>
+
+            <div class="row">
+                <img src="{% static 'core/images/productos/placa_madre_asus_amd.png' %}" alt="" class="img-fluid img-guia">
+                <img src="{% static 'core/images/productos/placa_madre_asus_intel.png' %}" alt="" class="img-fluid img-guia">
+                <img src="{% static 'core/images/productos/ROGSTRIXZ490-HGAMING-removebg-preview.png' %}" alt="" class="img-guia">
+            </div>
+        
+        </div>
+        <hr>
+
+        <div>
+            <!--Tercer Componente-->
+        
+            <h3>RAM</h3>
+            <p>
+                a memoria ram(random access memories) es una memoria volatil que se le cargan las Instrucciones que ejecuta el procesador y otras partes del computador
+            esta memoria al ser volatil al apagarse se pierde todo lo almacenado.
+                <br>
+                Existen de distincia frecuencia, tamaño  formato y capacidad..
+            </p>
+            <p>
+                Compatibilidad:Se requiere una placa madre compatible con las memorias ya sea ddr2, ddr3 o ddr4 y en el caso de ryzen hay memorias ram que no son compatibles con esta arquitectura a pesar de ser dd4
+                Tambien debemos fijarnos en su formato, para notebook es SO-DIMM y para escritorio DIMM.
+            </p>
+            <div class="row">
+                <img src="{% static 'core/images/productos/ram_tridentz_royal.png' %}" alt="" class="img-guia">
+                <img src="{% static 'core/images/productos/RamTridentz.png' %}" alt="" class="img-guia">
+            </div>
+        </div>
+        <hr>
+        <div>
+            <!--Cuarto Componente-->
+            <h3>Tarjeta de video (GPU)</h3>
+            <p>
+                La tarjeta de video es esencial si queremos dedicarnos a jugar o edicion de videos/fotos con nuestro computador. podriamos separarlas en 2 tipos
+                las de gaming y las profesionales. 
+                <br>
+                Por otro lado se separan en Nvidia y amd aqui mas que nada es un gusto personal la que debemos elegir y comprar la que se adapte a nuestras necesidades y presupuesto
+            </p>
+            <p>
+                Compatibilidad: Todas son compatibles con cualquier procesador para la placa madre cualquiera que posea un pcie-express de x16 para sacar el maximo provecho a esta misma
+                tambien debemos fijarnos que nuestra fuente de poder posea las entradas de alimentacion correspondientes para esta. Y por supuesto no tener cuello de botella  
+            </p>
+        
+            <div class="row">
+                <img src="{% static 'core/images/productos/msi_rtx_2060.png' %}" alt="" class="img-guia">
+                <img src="{% static 'core/images/productos/evga_rtx_2060.png' %}" alt="" class="img-guia">
+            </div>
+        </div>
+        <hr>
+        <div>
+            <!--Quinto Componente-->
+            <h3>Almacenamiento</h3>
+            <p>
+                Nuestro sistema de almacenamiento es fundamental para el armado del computador, ya que aqui es donde se guardaran todos nuestros datos, archivos y programas.
+                <br>
+                Aqui tenemos muchas opciones para elegir podemos ir desde lo mas clasico un disco duro(HDD), o ya si queremos algo mas de velocidade al iniciar nuestro sistema operativo y cargar ciertos programas esenciales
+                podemos optar por un SSD(Solid State Drive).Estos son hasta 10 veces mas rapidos que un disco duro tradicional y nos ahorraremos el estar esperando que nuestra pc carge todo, ya que esto tardara menos de 1 minuto
+                por otro lado ya tenemos los m.2. ya sea en su version sata o pcie debemos ver que nuestra placa soporte este tipo de dispositivos.
+            </p>
+            <p>
+                Compatibilidad:Actualmente casi todos los discos duros y ssd son compatibles con la mayoria de placas madres del mercado, por otro lado como ya se menciono
+                los m.2 sata o pcie son soportados solo por algunas placas y generaciones de procesadores asi que debemos revisar si nuestra placa y procesador lo aceptan 
+                antes de hacer esta compra
+            </p>
+            
+            <div class="row">
+                <img src="{% static 'core/images/productos/m.2.png' %}" alt="" class="img-guia">
+                <img src="{% static 'core/images/productos/HDD_toshiba.png' %}" alt="" class="img-guia">
+            </div>
+        </div>
+        <hr>                
+        <div>
+            <!--Sexto Componente-->
+            <h3>Fuente de poder(PSU)</h3>
+            <p>
+                Todos nuestros componentes consumen una cantidad de watts distinta, asi que debemos revisar bien cuanto es lo que necesitaremos y dejar un margen en caso de algun fallo en el sistema electrico
+                para esto debemos elegir una buena fuente de poder. Hay 2 tipos de fuentes las normales y modulares las modulares nos permiten quitar los cables que no necesitaremos
+                las normales no, asi que quedaran en el gabibente y recomendamos amarrarlos para que no estorben nuestro flujo de aire.
+                <br>
+                Hay muchas personas que compran fuentes de baratas por que ofrecen muchos watts, pero no son seguras. Siempre debemos fijarnos en la certificacion de estas, Para ello 
+                se recomienda para un pc de gama media una fuente de unos 500w-600w con certificacion 80+ Bronze con eso deberiamos poder levantar cualquier configuracion de gama media
+                existen otros tipos de certificaciones que dependen de la gama de la fuente y su uso                    </p>
+            <p>
+                Compatibilidad:Todas las fuentes certificadas deberian servirnos para cualquier terminal armado, pero en configuraciones extremas de gama alta puede que nos falten algunos compatibles
+                para lo cual deberemos usar adaptadores o en caso de tener una fuente modular adquirirlos apartea  
+            </p>
+            <div class="row">
+                <img src="{% static 'core/images/productos/Evga1000.png' %}" alt="" class="img-guia">
+                <img src="{% static 'core/images/productos/EVGA850.png' %}" alt="" class="img-guia">
+            </div>
+        </div>
+        <hr>
+        <div>
+            <!--Septimo Componente-->
+            <h3>Gabinete</h3>
+            <p>
+                Aqui es donde elejimos nuestro gabinete hay muchas opciones, ya sea en marcas, tamaños y diseños. solo queda escoger el que mas nos gusta
+                <br>
+                Hay algunos que traen fuente de poder instalada estos no los recomendamos.    
+            </p>
+            <p>
+                Compatibilidad:Solo debemos fijarnos en que el gabinete soporte nuestro tamaño de placa ya sea micro itx, atx o extended atx y que el largo sea el suficiente
+                para nuestra tarjeta.
+            </p>
+        
+            <div class="row">
+                <img src="{% static 'core/images/productos/gabinete_aerocool.png' %}" alt="" class="img-guia">
+                <img src="{% static 'core/images/productos/gabinete_asus.png' %}" alt="" class="img-guia">
+            </div>
+        </div>
+        </div> <!--Fin Guia Section 1-->
+        <!--Guia Section 2-->
+        <div class="guia-section" id="guia-section-2">
+            <p>
+                Siempre recomendamos que al momento de comprar tengamos claro nuestro presupuesto, Y que tengamos un balance de nuestros
+                componentes para evitar el cuello de botella. 
+            </p>
+            <p>
+                Invertir correctamente nuestro dinero en los componentes que se ajusten a 
+                nuestras necesidades y no obviar en los componentes esenciales de nuestra computadora, como lo podria ser la 
+                fuente de poder y placa madre. Mucha gente invierte poco en estos componentes siendo de los mas importantes.
+            </p>
+            <p>
+                Al actualizar algun componente de una computadora, hay que revisar la compatibilidad. 
+            </p>
+            <hr>
+            <h5>CPU</h5>
+            <p>
+                Al actualizar el CPU hay que revisar que la MotherBoard posea
+                un Socket compatible y que sus controladores sean los correctos, 
+                ademas la ram debe trabajar a la velocidad minima necesaria por el procesador.
+            </p>
+            <hr>
+            <h5>GPU</h5>
+            <p>
+                Al actualizar la GPU no es mayor problema, ya que todas los conectores de GPU actualmente siendo PCIx16 son entre ellos compatibles.
+            </p>
+            <hr>
+            <h5>Almacenamiento</h5>
+            <p>
+                Al hacer cambios en almacenamiento hay 2 puntos a considerar con la MotherBoard: Que tenga el conector compatible y que este no se desactive o desactive otros
+                compontes conectados, esto ultimo por la cantidad limitada de carriles PCI.
+            </p>
+            <br>
+        </div>
+            <!--Fin Guia Section 2-->
+
+            <!--Guia Section 3-->
+        <div class="guia-section" id="guia-section-3">
+            <p> Siempre surgen dudas al momento de armar nuestra computadora por primera vez, y se nos complican algunos conectores
+                Nunca debemos hacer que las cosas entren por la fuerza, si no podremos dañar alguno de los componentes de la computadora. <br>
+                <br>
+                Una parte muy odiada por muchos es el panel frontal del gabinete con la placa madre. Ya que son muchos conectores y pequeños
+                esto llega a desesperar a mas de alguno en su primer armado.  <br>
+                <br>
+                Generalmente La nomenclatura de las conecciónes va mirando hacia abajo y las pocisiones y orden estan especificadas arriba del panel.
+                De igual forma se recomienda revisar el manual de la placa donde especifica hacia donde van los cables y su posición.
+                </p>
+        </div>
+<!--fin Guia Section 2-->
+    </div>
+</div>
 
 
 {% endblock %}

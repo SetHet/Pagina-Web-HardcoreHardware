@@ -27,14 +27,16 @@ def search(request):
             # Guardar los filtros
             for grp in groups:
                 comandos = grp.split(':')
+                valor = comandos[0]
                 # Si el filtro es complejo se analisa y determina si pertenece a una caracteristica especifica
                 if len(comandos) > 1:
-                    print(comandos[0])
-                    if comandos[0].lower() == "categoria":
-                        categoriaFiltro = comandos[1]
+                    tag = comandos[0]
+                    valor = comandos[1]
+                    if tag.lower() == "categoria":
+                        categoriaFiltro = valor
                         continue
                 # Si no es un filtro complejo se guarda en palabras filtro
-                wordsFiltro.append(comandos[0])
+                wordsFiltro.append(valor)
 
         # Se comienza con un 'select * from producto;'
         query = Producto.objects.all()

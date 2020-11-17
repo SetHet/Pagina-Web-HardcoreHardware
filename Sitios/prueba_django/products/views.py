@@ -11,16 +11,8 @@ def search(request):
         categoriaFiltro = ""
         wordsFiltro = []
 
-        # Conseguir el diccionario de la sentencia de busqueda
-        searchDicc = request.GET
-
-        # Revisar si tiene en el diccionario la key 'search'
-        if 'search' in searchDicc:
-            # Separar el valor de search en grupos
-            groups = searchDicc['search'].split(' ')
-        else:
-            # Si no existe search se crea un grupo vacio
-            groups = []
+        # Separar el request.get en grupos
+        groups = GetWordGroupsSearch(request)
 
         # Revisar que el search no esta vacio
         if not (len(groups) == 1 and groups[0] == ""):
@@ -52,6 +44,21 @@ def search(request):
     return render(request, "products/search.html", {'list_categorias':list_categorias, 'list_productos':list_productos})  
 
 
+def GetWordGroupsSearch(request):
+    # Conseguir el diccionario de la sentencia de busqueda
+    searchDicc = request.GET
+
+    # Revisar si tiene en el diccionario la key 'search'
+    if 'search' in searchDicc:
+        # Separar el valor de search en grupos
+        groups = searchDicc['search'].split(' ')
+    else:
+        # Si no existe search se crea un grupo vacio
+        groups = []
+
+    return groups
+
+
 def BusquedaFiltrada(wordsFiltro, categoriaFiltro):
     # Se comienza con un 'select * from producto;'
     query = Producto.objects.all()
@@ -69,3 +76,4 @@ def BusquedaFiltrada(wordsFiltro, categoriaFiltro):
             query = query | query_original.filter(Q(name__icontains=word) | Q(descripcion__icontains=word) | Q(categoria__title__icontains=word))
 
     return query
+

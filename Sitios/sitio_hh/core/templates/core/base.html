@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!--Start CSS-->
+    {% load static %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'core/bootstrap/css/bootstrap.min.css' %}">
+    <!-- CSS FontAwesome -->
+    <link rel="stylesheet" href="{% static 'core/fontawesome/css/all.css' %}">
+    <!--CSS Personalizado-->
+    <link rel="stylesheet" href="{% static 'core/css/style_base.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/footer.css' %}">
+    {% block css_custom %}{% endblock %}
+    <!--End CSS-->
+    
+    
+    <!--Pestaña-->
+    <title>{% block pestaña_nombre %}Hardcore Hardware{% endblock %}</title>
+    <link rel="icon" href="{% static 'core/images/HH.png' %}" type="images/png">
+</head>
+<body>
+
+    <!--Start Header-->
+    <header>
+        <!--Inicio NAVBAR-->
+        <nav class="navbar navbar-expand-lg bg-custom-dark navbar-dark flex-lg-row">
+            <a class="navbar-brand" href="{% url 'home' %}" target="_top">
+                <img class="nav-icon" src="{% static 'core/images/HH.png' %}" alt="logo">  
+            </a>
+            <a class="navbar-brand" href="{% url 'home' %}" target="_top">
+                <span class="navbar-title">Hardcore Hardware</span>
+            </a>
+            
+            <!--Boton de menú-->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--Links-->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav  ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'search' %}" target="_top">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}" target="_top">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="guias.html" target="_top">Guias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'calc' %}" target="_top">Moneda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}" target="_top">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" target="_top">Acceder</a>
+                    </li>
+                    <li class="nav-item dropdown show">
+                        <a class="nav-link dropdown-toggle" href="#" id="nadbarDropdown" 
+                        data-toggle="dropdown">Categorias</a>
+                        <div class="dropdown-menu dropdown-menu-md-right">
+                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AMonitores" target="_top" get=>Monitores</a>
+                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AGPU" target="_top">Tarjetas de video</a>
+                            <a class="dropdown-item" href="memoria_ram.html" target="_top">Memorias RAM</a>
+                            <a class="dropdown-item" href="procesadores.html" target="_top">Procesadores</a>
+                            <a class="dropdown-item" href="placas_madre.html" target="_top">Placas Madres</a>
+                            <a class="dropdown-item" href="teclados.html" target="_top">Teclados</a>
+                            <a class="dropdown-item" href="mouse.html" target="_top">Mouse</a>
+                            <a class="dropdown-item" href="almacenamiento.html" target="_top">Almacenamiento</a>
+                            <a class="dropdown-item" href="audifonos.html" target="_top">Audifonos</a>
+                            <a class="dropdown-item" href="fuentes_de_poder.html" target="_top">Fuentes de Poder</a>
+                            <a class="dropdown-item" href="gabinetes.html" target="_top">Gabinetes</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--Start Oferta-->
+        <div class="row offer-main">
+            <h1 class="col-12 offer-title">Black day!</h1>
+            <p class="col-12 offer-text">Termina en <span class="tiempo_limite">00H:00M:00S</span></p>
+        </div>
+        <!--End Oferta-->
+    </header>
+    <!--End Header-->
+    
+    
+
+
+    <!--Start Contenido-->
+    <main>
+        {% block content %} {% endblock %}
+        {{request.path}}
+    </main>
+    <!--End Contenido-->
+
+
+
+    <!--Start Footer-->
+    <footer class="py-4">
+        <div class="container-fluid">
+            <nav class="row text-center">
+                <div class="col-12 col-sm-6 col-md-3 footer-col">
+                    <div class="col footer-bloque">
+                        <a href="index.html" class="text-reset-uppercase" target="_top">
+                            <img class="footer-icon" src="{% static 'core/images/HH.png' %}" alt="logo" style="height: 120px; width: 120px;">  
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 footer-col">
+                    <ul class="list-unstyled">
+                        <li class="font-weight-bold text-uppercase">Social Networks</li>  
+                        <li>
+                            <a href="https://www.instagram.com/hardcore_hardware/?hl=es-la/" target="blank" class="text-reset"><i class="fab fa-instagram"></i> Instagram</a>
+                        </li>
+                        <li><a href="https://twitter.com/HardcoreHardwa1/" target="blank" class="text-reset"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 footer-col">
+                    <ul class="list-unstyled">
+                        <li class="font-weight-bold text-uppercase">Páginas</li>
+                        <li><a href="{% url 'search' %}" target="_top" class="text-reset footer-link">Search</a></li>
+                        <li><a href="index.html" target="_top" class="text-reset footer-link">Inicio</a></li>
+                        <li><a href="guias.html" target="_top" class="text-reset footer-link">Guias</a></li>
+                        <li><a href="contacto.html" target="_top" class="text-reset footer-link">Contacto</a></li>
+                        <li><a href="acerca_de.html" target="_top" class="text-reset footer-link">Acerca de</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 footer-col">
+                    <ul class="list-unstyled">
+                        <li class="font-weight-bold text-uppercase">Precio de la Moneda</li>
+                        <li>Dolares: <span class="valorDolar"></span></li>
+                        <li>Euros: <span class="valorEuro"></span></li>
+                        <li>UF: <span class="valorUF"></span></li>
+                        {% if request.path != '/calc/' %}
+                            <li><a class="footer-link" href="{% url 'calc' %}" target="_blank">Calcular</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+            </nav>
+            <div class="row footer-bottom">
+                <div class="col-lg-6 text-center">
+                    <h6>Creado por Hardcore Hardware Team.</h6>
+                </div>
+
+                <div class="col-lg-6 text-center">
+                    <h6><span class="fecha"></span>, <span class="hora"></span></h6>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End Footer-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'core/jquery.js' %}"></script>
+    <script src="{% static 'core/bootstrap/js/bootstrap.bundle.js' %}"></script>
+    
+    <!--Start Custom Scripts-->
+    <script src="{% static 'core/js/tiempo.js' %}"></script>
+    <script src="{% static 'core/js/offer.js' %}"></script>
+    <script src="{% static 'core/js/price.js' %}"></script>
+    <!--End Custom Scripts-->
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block css_custom %}
+<link rel="stylesheet" href="{% static 'core/css/login.css' %}">
+{% endblock %}
+{% block tab_title %}Guias{% endblock %}
+{% block content %} 
+    <div class="modal-dialog text-center">
+        <div class="col-sm-8 main-section">
+            <div class="modal-content">
+                <div class="col-12 user-img">
+                    <img src="{% static 'core/images/iconologin.png' %}" alt="icono_login"/>
+                </div>
+                <form action="#"  method="GET" id="formulario_login" class="col-12">
+                  
+                    <div class="form-group" id="user-group"> 
+                        <input type="text" name="username" class="form-control" placeholder="Enter username"/>
+
+                    </div>
+                    <div class="form-group" id="password-group">
+                        <input type="password" name="password" class="form-control" placeholder="Enter password"/>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary"  id="enviar" value="Login" onclick="mensajeError()">
+                        
+                        <input type="submit" class="btn btn-secondary" id="registro" value="Sign In" onclick="window.location='contacto.html';">
+                    </div>              
+                </form>
+                <div class="col-12 forgot-password mb-4">
+                    <a href="RecuperarPassword.html" >¿Olvidaste la contraseña?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block js_custom %}
+<script src="js/jquery.validate.js"></script>
+<script src="js/validar_login.js"></script>
+{% endblock %}

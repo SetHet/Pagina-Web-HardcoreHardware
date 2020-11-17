@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('monitores.urls')),
     path('', include('products.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('admin/', admin.site.urls),
 ]
 if settings.DEBUG: 
     from django.conf.urls.static import static

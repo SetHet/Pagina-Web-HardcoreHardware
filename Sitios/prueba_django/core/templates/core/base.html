@@ -22,6 +22,7 @@
     {% block css_custom %}
     
     {% endblock %}
+    
     <!--End CSS-->
 </head>
 <body>
@@ -56,8 +57,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about' %}"target="_top">Acerca de</a>
                     </li>
+                    
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}" target="_top">Acceder</a>
+                        {% if user.is_authenticated %}
+                            <li><a href="#" >Usuario: {{ user.username }}</a></li>
+                            <li><a href="{% url 'logout' %}">Cerrar sesion</a></li>
+                        {%else%}
+                             <a class="nav-link" href="{% url 'login' %}" target="_top">Acceder</a>
+                        {%endif%}
                     </li>
                     <li class="nav-item dropdown show">
                         <a class="nav-link dropdown-toggle" href="#" id="nadbarDropdown" 

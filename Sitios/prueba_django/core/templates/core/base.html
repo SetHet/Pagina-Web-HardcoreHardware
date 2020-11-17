@@ -46,6 +46,9 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav  ml-auto">
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'search' %}" target="_top">Buscar</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'home' %}" target="_top">Inicio</a>
                     </li>
                     <li class="nav-item">
@@ -70,17 +73,17 @@
                         <a class="nav-link dropdown-toggle" href="#" id="nadbarDropdown" 
                         data-toggle="dropdown">Categorias</a>
                         <div class="dropdown-menu dropdown-menu-md-right">
-                            <a class="dropdown-item" href="{% url 'monitores' %}" target="_top">Monitores</a>
-                            <a class="dropdown-item" href="graficas.html" target="_top">Tarjetas de video</a>
-                            <a class="dropdown-item" href="memoria_ram.html" target="_top">Memorias RAM</a>
-                            <a class="dropdown-item" href="procesadores.html" target="_top">Procesadores</a>
-                            <a class="dropdown-item" href="placas_madre.html" target="_top">Placas Madres</a>
-                            <a class="dropdown-item" href="teclados.html" target="_top">Teclados</a>
-                            <a class="dropdown-item" href="mouse.html" target="_top">Mouse</a>
-                            <a class="dropdown-item" href="almacenamiento.html" target="_top">Almacenamiento</a>
-                            <a class="dropdown-item" href="audifonos.html" target="_top">Audifonos</a>
-                            <a class="dropdown-item" href="fuentes_de_poder.html" target="_top">Fuentes de Poder</a>
-                            <a class="dropdown-item" href="gabinetes.html" target="_top">Gabinetes</a>
+                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AMonitores" target="_top">Monitores</a>
+                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AGPU" target="_top">Tarjetas de video</a>
+                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3ARAM" target="_top">Memorias RAM</a>
+                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3ACPU" target="_top">Procesadores</a>
+                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AMotherBoards" target="_top">Placas Madres</a>
+                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AKeyBoards" target="_top">Teclados</a>
+                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AMouse" target="_top">Mouse</a>
+                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AAlmacenamiento" target="_top">Almacenamiento</a>
+                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AAudifonos" target="_top">Audifonos</a>
+                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AFuentes" target="_top">Fuentes de Poder</a>
+                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AGabinetes" target="_top">Gabinetes</a>
                         </div>
                     </li>
                 </ul>

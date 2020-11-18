@@ -40,7 +40,7 @@ def search(request):
         # Se rescatan las categorias y productos seleccionados para enviarlos
         list_productos = query
         try:
-            categoria_select = Categoria.objects.get(title=categoriaFiltro)
+            categoria_select = Categoria.objects.get(title__iexact=categoriaFiltro)
             dicc['categoria_select'] =  categoria_select
         except:
             pass

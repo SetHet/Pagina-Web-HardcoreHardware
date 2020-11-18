@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Categoria, Producto
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from core import views as core_views
 
 # Create your views here.
 def search(request):
@@ -42,7 +43,11 @@ def search(request):
         list_categorias = Categoria.objects.all()
         list_productos = Producto.objects.all()
     
-    return render(request, "products/search.html", {'list_categorias':list_categorias, 'list_productos':list_productos})  
+    dicc = core_views.baseRequired()
+    dicc['list_categorias'] = list_categorias
+    dicc['list_productos'] = list_productos
+
+    return render(request, "products/search.html", dicc)  
 
 
 def GetWordGroupsSearch(request):
@@ -81,8 +86,8 @@ def BusquedaFiltrada(wordsFiltro, categoriaFiltro):
 
 
 
-def home(request):
+def home(request, dicc):
 
     querySetCategoria = Categoria.objects.all()
-
-    return render(request, "core/home.html", {'CategoriaQuerySet':querySetCategoria})
+    dicc['CategoriaQuerySet'] = querySetCategoria
+    return render(request, "core/home.html", dicc)

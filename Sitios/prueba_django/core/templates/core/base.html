@@ -77,17 +77,9 @@
                         <a class="nav-link dropdown-toggle" href="#" id="nadbarDropdown" 
                         data-toggle="dropdown">Categorias</a>
                         <div class="dropdown-menu dropdown-menu-md-right">
-                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AMonitores" target="_top">Monitores</a>
-                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AGPU" target="_top">Tarjetas de video</a>
-                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3ARAM" target="_top">Memorias RAM</a>
-                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3ACPU" target="_top">Procesadores</a>
-                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AMotherBoards" target="_top">Placas Madres</a>
-                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AKeyBoards" target="_top">Teclados</a>
-                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AMouse" target="_top">Mouse</a>
-                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AAlmacenamiento" target="_top">Almacenamiento</a>
-                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AAudifonos" target="_top">Audifonos</a>
-                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AFuentes" target="_top">Fuentes de Poder</a>
-                            <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3AGabinetes" target="_top">Gabinetes</a>
+                            {% for categoria in categorias_all %}
+                                <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3A{{categoria.title}}" target="_top">{{categoria.nameSpanish}}</a>
+                            {% endfor %}
                         </div>
                     </li>
                 </ul>

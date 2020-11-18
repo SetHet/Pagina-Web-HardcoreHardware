@@ -7,11 +7,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="text-white">
-    {{list_categorias}}
-    {{list_productos}}
-    </div>
-
+    
     <main class="container-xl">
 
         <div class="row">
@@ -35,17 +31,21 @@
 
         <div class="row">
             {% for prod in list_productos %}
-                <div class="item">
+                <div class="col-12 col-md-6 col-lg-4" style="height: 500px;">
                     <div class="card">
-                        <img class="card-img custom-img" src="{{prod.image.url}}"  alt="Responsive image">
-                        <h1 class="card-title custom-title">
-                            {{prod.name}}
-                        </h1>
-                        <p class="card-text custom-text">
-                            {{prod.descripcion}} 
-                            <br> 
-                            Categoria: {{prod.categoria}}
-                        </p>
+                        <div class="card-header">
+                            <img class="card-img custom-img" src="{{prod.image.url}}"  alt="Responsive image">
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title custom-title">
+                                {{prod.name}}
+                            </h1>
+                            <div class="card-text custom-text">
+                                {{prod.descripcion}} 
+                                <br> 
+                                Categoria: {{prod.categoria}}
+                            </div>
+                        </div>
                         <div class="card-footer">
                             <div class="row">
                                 <div class="custom-precio-activo col-6">

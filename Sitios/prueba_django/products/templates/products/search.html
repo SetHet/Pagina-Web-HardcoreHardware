@@ -27,7 +27,9 @@
             </div>
         </div>
 
-        <h3 class="pb-5">Monitores</h3>
+        {% if categoria_select %}
+            <h3 class="pb-5" style="margin: auto;">{{categoria_select.nameSpanish}}</h3>
+        {% endif %}
 
         <div class="row">
             {% for prod in list_productos %}

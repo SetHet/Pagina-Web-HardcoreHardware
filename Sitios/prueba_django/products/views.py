@@ -6,6 +6,8 @@ from core import views as core_views
 
 # Create your views here.
 def search(request):
+    
+    dicc = core_views.baseRequired()
 
     if (request.method == 'GET'):
 
@@ -36,15 +38,16 @@ def search(request):
         query = BusquedaFiltrada(wordsFiltro, categoriaFiltro)
 
         # Se rescatan las categorias y productos seleccionados para enviarlos
-        list_categorias = Categoria.objects.all()
         list_productos = query
+        try:
+            categoria_select = Categoria.objects.get(title=categoriaFiltro)
+            dicc['categoria_select'] =  categoria_select
+        except:
+            pass
     else:
-        # Se rescatan todas las categorias y productos para enviarlos si no hay filtro
-        list_categorias = Categoria.objects.all()
+        # Se rescatan todas los productos para enviarlos si no hay filtro
         list_productos = Producto.objects.all()
     
-    dicc = core_views.baseRequired()
-    dicc['list_categorias'] = list_categorias
     dicc['list_productos'] = list_productos
 
     return render(request, "products/search.html", dicc)  

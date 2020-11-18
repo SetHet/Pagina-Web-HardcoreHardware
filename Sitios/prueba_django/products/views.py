@@ -78,3 +78,11 @@ def BusquedaFiltrada(wordsFiltro, categoriaFiltro):
 
     return query
 
+
+
+
+def home(request):
+
+    querySetCategoria = Categoria.objects.all()
+
+    return render(request, "core/home.html", {'CategoriaQuerySet':querySetCategoria})

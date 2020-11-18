@@ -278,141 +278,21 @@
             </div> 
             <!--Fin Carousel 2-->
         </div>
+        
         <!--Categorias-->
         <div class="row mt-4 mb-4">
-            <!--1 Monitores-->
+            {% for categoria in CategoriaQuerySet %}
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
-                <a class="categoria-link" href="{% url 'search' %}?search=categoria%3AMonitores">
+                <a class="categoria-link" href="{% url 'search' %}?search=categoria%3A{{categoria.title}}">
                     <div class="card categoria-card">
-                        <img class="card-img-top categoria-card-img" src="{% static 'core/images/Monitores/Asus.png' %}" alt="Card Image">
+                        <img class="card-img-top categoria-card-img" src="{{categoria.image.url}}" alt="Card Image">
                         <div class="card-img-overlay categoria-card-overlay">
-                            <h4 class="card-title categoria-card-title">Monitores</h4>
+                            <h4 class="card-title categoria-card-title">{{categoria.nameSpanish}}</h4>
                         </div>
                     </div>
                 </a>
             </div>
-
-            <!--2 Tarjeta de video-->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
-                <a class="categoria-link" href="{% url 'search' %}?search=categoria%3AGPU">
-                    <div class="card categoria-card">
-                        <img class="card-img-top categoria-card-img" src="{% static 'core/images/productos/evga_rtx_2060.png' %}" alt="Card Image">
-                        <div class="card-img-overlay categoria-card-overlay">
-                            <h4 class="card-title categoria-card-title">Tarjetas de Video</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!--3 RAM-->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
-                <a class="categoria-link" href="{% url 'search' %}?search=categoria%3ARAM">
-                    <div class="card categoria-card">
-                        <img class="card-img-top categoria-card-img" src="{% static 'core/images/productos/RamTridentz.png' %}" alt="Card Image">
-                        <div class="card-img-overlay categoria-card-overlay">
-                            <h4 class="card-title categoria-card-title">Memorias RAM</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!--4 Procesador-->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
-                <a class="categoria-link" href="{% url 'search' %}?search=categoria%3ACPU">
-                    <div class="card categoria-card">
-                        <img class="card-img-top categoria-card-img" src="{% static 'core/images/productos/I9_9900k.png' %}" alt="Card Image">
-                        <div class="card-img-overlay categoria-card-overlay">
-                            <h4 class="card-title categoria-card-title">Procesadores</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!--5 Placas Madre-->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
-                <a class="categoria-link" href="{% url 'search' %}?search=categoria%3AMotherBoards">
-                    <div class="card categoria-card">
-                        <img class="card-img-top categoria-card-img" src="{% static 'core/images/productos/placa_madre_asus_intel.png' %}" alt="Card Image">
-                        <div class="card-img-overlay categoria-card-overlay">
-                            <h4 class="card-title categoria-card-title">Placas Madre</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!--6 Teclados-->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
-                <a class="categoria-link" href="{% url 'search' %}?search=categoria%3AKeyBoards">
-                    <div class="card categoria-card">
-                        <img class="card-img-top categoria-card-img" src="{% static 'core/images/productos/RazerTeclado.png' %}" alt="Card Image">
-                        <div class="card-img-overlay categoria-card-overlay">
-                            <h4 class="card-title categoria-card-title">Teclados</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!--7 Mouse-->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
-                <a class="categoria-link" href="{% url 'search' %}?search=categoria%3AMouse">
-                    <div class="card categoria-card">
-                        <img class="card-img-top categoria-card-img" src="{% static 'core/images/productos/mouse_hyperx.png' %}" alt="Card Image">
-                        <div class="card-img-overlay categoria-card-overlay">
-                            <h4 class="card-title categoria-card-title">Ratones</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!--8 Almacenamiento-->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
-                <a class="categoria-link" href="{% url 'search' %}?search=categoria%3AAlmacenamiento">
-                    <div class="card categoria-card">
-                        <img class="card-img-top categoria-card-img" src="{% static 'core/images/productos/HDD_toshiba.png' %}" alt="Card Image">
-                        <div class="card-img-overlay categoria-card-overlay">
-                            <h4 class="card-title categoria-card-title">Almacenamientos</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!--9 Audifonos-->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
-                <a class="categoria-link" href="{% url 'search' %}?search=categoria%3AAudifonos">
-                    <div class="card categoria-card">
-                        <img class="card-img-top categoria-card-img" src="{% static 'core/images/productos/Hyperx_CloudAlpha.png' %}" alt="Card Image">
-                        <div class="card-img-overlay categoria-card-overlay">
-                            <h4 class="card-title categoria-card-title">Audifonos</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!--10 Fuentes de Poder-->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
-                <a class="categoria-link" href="{% url 'search' %}?search=categoria%3AFuentes">
-                    <div class="card categoria-card">
-                        <img class="card-img-top categoria-card-img" src="{% static 'core/images/productos/Evga1000.png' %}" alt="Card Image">
-                        <div class="card-img-overlay categoria-card-overlay">
-                            <h4 class="card-title categoria-card-title">Fuentes de Poder</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!--11 Gabinetes-->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 categoria-col">
-                <a class="categoria-link" href="{% url 'search' %}?search=categoria%3AGabinetes">
-                    <div class="card categoria-card">
-                        <img class="card-img-top categoria-card-img" src="{% static 'core/images/productos/gabinete_aerocool.png' %}" alt="Card Image">
-                        <div class="card-img-overlay categoria-card-overlay">
-                            <h4 class="card-title categoria-card-title">Gabinetes</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
+            {% endfor %}
         </div>
-        <!--Fin Categorias-->
 
 {% endblock %}

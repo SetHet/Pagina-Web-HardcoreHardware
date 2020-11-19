@@ -94,3 +94,9 @@ def home(request, dicc):
     querySetCategoria = Categoria.objects.all()
     dicc['CategoriaQuerySet'] = querySetCategoria
     return render(request, "core/home.html", dicc)
+
+
+def product(request, pk_product):
+    dicc = core_views.baseRequired()
+    dicc['producto'] = Producto.objects.get(id=pk_product)
+    return render(request, "products/product.html", dicc)

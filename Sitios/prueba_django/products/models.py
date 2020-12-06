@@ -3,6 +3,10 @@ from django.db import models
 # Create your models here.
 class Categoria(models.Model):
     title = models.CharField(max_length=50, verbose_name="Titulo")
+    tags = models.TextField(null=True, verbose_name="Tags")
+    nameSpanish = models.CharField(max_length=50, null=True, verbose_name="Nombre Visible") 
+    image = models.ImageField(upload_to="categorias", null=True, verbose_name="Imagen")
+    background = models.ImageField(upload_to="categoriasBackGround", null=True, verbose_name="Imagen Fondo")
 
     def __str__(self):
         return self.title

@@ -3,6 +3,8 @@ from .models import Categoria, Producto
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from core import views as core_views
+#Paginacion
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 def search(request):
@@ -47,7 +49,20 @@ def search(request):
     else:
         # Se rescatan todas los productos para enviarlos si no hay filtro
         list_productos = Producto.objects.all()
+
+    # Start Paginacion
+    page = request.GET.get('page', 1)
+    paginator = Paginator(list_productos, 12)
     
+    try:
+        list_productos = paginator.page(page)
+    except PageNotAnInteger:
+        list_productos = paginator.page(1)
+    except EmptyPage:
+        list_productos = paginator.page(paginator.num_pages)
+
+    # End Paginacion
+
     dicc['list_productos'] = list_productos
 
     return render(request, "products/search.html", dicc)  

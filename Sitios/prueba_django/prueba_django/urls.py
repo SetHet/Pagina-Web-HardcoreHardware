@@ -32,7 +32,7 @@ urlpatterns = [
     path('contact/',include('contact.urls')),
     path('reset/<uidb64>/<token>/' , auth_views.PasswordResetConfirmView.as_view(), name="password_reset_confirm"),
 
-    path('reset_password_complete/' , auth_views.PasswordResetCompleteView.as_view(), name="password_reset_complete"),
+    path('reset_password_complete/' , auth_views.PasswordResetCompleteView.as_view(template_name="accounts/password_reset_done.html"), name="password_reset_complete"),
 ]
 if settings.DEBUG: 
     from django.conf.urls.static import static

@@ -58,6 +58,37 @@
                 </div>
             {% endfor %}
         </div>
+        <div class="row justify-content-center text-white mt-4 mb-4">
+            {% if list_productos.has_other_pages %}
+                <nav aria-label="Paginacion productos">
+                    <ul class="pagination">
+                        <!--Anterior-->
+                        {% if list_productos.has_previous %}
+                            <li class="page-item"><a class="page-link" href="?page={{list_productos.previous_page_number}}&search={{request.GET.search}}">&laquo;</a></li>
+                        {% else%}
+                            <li class="page-item disabled"><span class="page-link" >&laquo;</span></li>
+                        {% endif %}
+                        
+                        <!--Actual-->
+                        {% for numero_pagina in list_productos.paginator.page_range %}
+                            {% if list_productos.number == numero_pagina %}
+                                <li class="page-item active"><span class="page-link" >{{numero_pagina}}<span class="sr-only">(current)</span></span></li>
+                            {% else%}
+                                <li class="page-item"><a class="page-link" href="?page={{numero_pagina}}&search={{request.GET.search}}">{{numero_pagina}}</a></li>
+                            {% endif %}
+                        {% endfor %}
+
+                        <!--Siguiente-->
+                        {% if list_productos.has_next %}
+                            <li class="page-item"><a class="page-link" href="?page={{list_productos.next_page_number}}&search={{request.GET.search}}">&raquo;</a></li>
+                        {% else%}
+                            <li class="page-item disabled"><span class="page-link" >&raquo;</span></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            {% endif%}
+
+        </div>
                 
     </main>
 {% endblock %}

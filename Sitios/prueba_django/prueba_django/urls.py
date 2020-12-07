@@ -19,12 +19,22 @@ from core import views as core_views
 from monitores import views as monitores_views
 from products import views as products_views
 from django.conf import settings 
+from django.contrib.auth import views as auth_views
+
 urlpatterns = [
     path('', include('core.urls')),
     path('', include('monitores.urls')),
     path('', include('products.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
+
+    path('reset_password/' , auth_views.PasswordResetView.as_view(), name="reset_password"),
+
+    path('reset_password_sent/' , auth_views.PasswordResetDoneView.as_view(), name="password_reset_done"),
+
+    path('reset/<uidb64>/<token>/' , auth_views.PasswordResetConfirmView.as_view(), name="password_reset_confirm"),
+
+    path('reset_password_complete/' , auth_views.PasswordResetCompleteView.as_view(), name="password_reset_complete"),
 ]
 if settings.DEBUG: 
     from django.conf.urls.static import static

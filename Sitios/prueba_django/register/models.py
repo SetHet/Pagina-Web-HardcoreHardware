@@ -8,5 +8,5 @@ class Registro(models.Model):
     birthdate = models.DateField()
     address = models.CharField(max_length=50)
     email = models.EmailField()
-    password = models.CharField(max_length=10)
-    comments = models.TextField()
+    password = models.CharField(max_length=12)
+    comments = models.TextField() 

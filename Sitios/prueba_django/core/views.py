@@ -22,7 +22,6 @@ def valorMoneda(request):
 def login(request):
     return render(request, "core/login.html", baseRequired())
 
-
 def baseRequired():
     dicctionary = {
         'categorias_all':Categoria.objects.all().order_by('nameSpanish')

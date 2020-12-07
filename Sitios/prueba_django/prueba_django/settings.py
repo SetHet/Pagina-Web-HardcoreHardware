@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
-
+APPEND_SLASH=False
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'core',
     'monitores.apps.MonitoresConfig',
     'products.apps.ProductsConfig',
+    'register',
 ]
 
 MIDDLEWARE = [

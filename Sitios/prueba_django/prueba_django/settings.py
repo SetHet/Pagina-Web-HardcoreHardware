@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'core',
     'monitores.apps.MonitoresConfig',
     'products.apps.ProductsConfig',
+    'register',
 ]
 
 MIDDLEWARE = [

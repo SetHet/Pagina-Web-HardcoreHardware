@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'contact',
     'monitores.apps.MonitoresConfig',
     'products.apps.ProductsConfig',
+    'social_network.apps.SocialNetworkConfig'
 ]
 
 MIDDLEWARE = [

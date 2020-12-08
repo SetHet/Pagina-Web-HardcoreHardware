@@ -20,7 +20,7 @@ from monitores import views as monitores_views
 from products import views as products_views
 from django.conf import settings 
 from django.contrib.auth import views as auth_views
-from register import views as register_views
+
 urlpatterns = [
     path('', include('core.urls')),
     path('', include('monitores.urls')),
@@ -28,7 +28,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('reset_password/' , auth_views.PasswordResetView.as_view(), name="reset_password"),
-    path('register/', register_views.register, name="register"),
     path('reset_password_sent/' , auth_views.PasswordResetDoneView.as_view(), name="password_reset_done"),
     path('contact/',include('contact.urls')),
     path('reset/<uidb64>/<token>/' , auth_views.PasswordResetConfirmView.as_view(), name="password_reset_confirm"),

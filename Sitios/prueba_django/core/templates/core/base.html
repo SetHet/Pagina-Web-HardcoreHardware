@@ -61,7 +61,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about' %}"target="_top">Acerca de</a>
                     </li>
-                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}"target="_top">Contacto</a>
+                    </li>                    
                     <li class="nav-item dropdown show">
                             {% if user.is_authenticated %}
                                 <a class="nav-link dropdown-toggle" href="#" id="nadbarDropdown" 
@@ -71,14 +73,14 @@
                                         <a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesion</a>
                                     </div>
                             {%else%}
-                                <a class="nav-link" href="{% url 'login' %}" target="_top">Acceder</a>
+                                <a class="nav-link" href="/admin/login/?next=/admin/" target="_top">Acceder</a>
                             {%endif%}
                     </li>
                     <li class="nav-item dropdown show">
                         <a class="nav-link dropdown-toggle" href="#" id="nadbarDropdown" 
                         data-toggle="dropdown">Categorias</a>
                         <div class="dropdown-menu dropdown-menu-md-right">
-                            {% for categoria in categorias_all %}
+                            {% for categoria in lista_categorias %}
                                 <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3A{{categoria.title}}" target="_top">{{categoria.nameSpanish}}</a>
                             {% endfor %}
                         </div>
@@ -123,10 +125,11 @@
                 <div class="col-12 col-sm-6 col-md-3 footer-col">
                     <ul class="list-unstyled">
                         <li class="font-weight-bold text-uppercase">Social Networks</li>  
+                        {% for red_social in redes_sociales %}
                         <li>
-                            <a href="https://www.instagram.com/hardcore_hardware/?hl=es-la/" target="blank" class="text-reset"><i class="fab fa-instagram"></i> Instagram</a>
+                            <a href="{{red_social.url}}" target="blank" class="text-reset"><i class="fab {{red_social.icon}}"></i> {{red_social.name}}</a>
                         </li>
-                        <li><a href="https://twitter.com/HardcoreHardwa1/" target="blank" class="text-reset"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="col-12 col-sm-6 col-md-3 footer-col">

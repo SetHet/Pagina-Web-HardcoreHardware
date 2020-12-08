@@ -2,14 +2,14 @@ from django.shortcuts import render
 from .models import Categoria, Producto
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
-from core import views as core_views
+
 #Paginacion
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 def search(request):
     
-    dicc = core_views.baseRequired()
+    dicc = {}
 
     if (request.method == 'GET'):
 
@@ -104,14 +104,10 @@ def BusquedaFiltrada(wordsFiltro, categoriaFiltro):
 
 
 
-def home(request, dicc):
 
-    querySetCategoria = Categoria.objects.all()
-    dicc['CategoriaQuerySet'] = querySetCategoria
-    return render(request, "core/home.html", dicc)
 
 
 def product(request, pk_product):
-    dicc = core_views.baseRequired()
+    dicc = {}
     dicc['producto'] = Producto.objects.get(id=pk_product)
     return render(request, "products/product.html", dicc)

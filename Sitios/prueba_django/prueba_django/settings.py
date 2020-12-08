@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
-
+APPEND_SLASH=False
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'contact',
     'monitores.apps.MonitoresConfig',
     'products.apps.ProductsConfig',
+    'social_network.apps.SocialNetworkConfig'
 ]
 
 MIDDLEWARE = [
@@ -67,6 +69,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_network.processors.ctx_dict',
+                'products.processors.ctx_dict',
             ],
         },
     },
@@ -135,3 +139,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'soportehardcorehardware@gmail.com'
 EMAIL_HOST_PASSWORD = 'un7porfauwu'
+
+# EMAIL_HOST = 'smtp.mailtrap.io'
+# EMAIL_HOST_USER = 'd7d06fd6f26a84'
+# EMAIL_HOST_PASSWORD = 'ff8e1bf5c97530'
+# EMAIL_PORT = '2525'

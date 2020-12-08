@@ -8,9 +8,13 @@ main {
     width: 80%;
 }
 
+
 .carousel-0-img {
     border: 3px solid var(--custom-color-light);
     background-color: var(--custom-color-shadow);
+    height: 400px;
+    padding: 20px;
+    object-fit: scale-down;
 }
 
 .carousel-0-caption {

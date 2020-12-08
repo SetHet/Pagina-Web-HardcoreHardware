@@ -1,0 +1,67 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block css_custom %}
+    <link rel="stylesheet" href="{% static 'core/css/contacto.css' %}">
+{% endblock %}
+
+{% block content %}    
+<main class="container mt-4 mb-4">
+        <h3 class="display-5" >Formulario de Contacto</h3>
+        <div class="row mt-4 mb-4">
+            <div class="col-md-6 order-1">
+                {% if 'OK' in request.GET %}
+                    <p class="text-success"><strong>Su mensaje se ha enviado correctamente</strong></p>
+                {% endif %}            
+                {% if 'FAIL' in request.GET %}
+                    <p class="text-alert-danger"><strong>Su mensaje no ha sido enviado</strong></p>
+                {% endif %}                   
+                <form action="" onsubmit="formAlert(); return false;"  method="POST" id="mi_formulario">
+                    {% csrf_token %}
+                    <!-- Armar formulario con FORM GROUP -->
+                    <div class="form-group">
+                        <label class="font-weight-bold" for="nombre">Nombre</label>
+                        <!--<input class="form-control" type="text" id="name" name="name" placeholder="Ej. Armando Casas" > -->
+                        <div class="input-group">
+                            {{form.name}}
+                        </div>
+                        {{form.name.errors}}
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold" for="email">Email</label>
+                        <!--<input class="form-control" id="email" name="email" type="email" placeholder="Ej. correos@correo.com"> -->
+                        <div class="input-group">
+                            {{form.email}}
+                        </div>
+                        {{form.email.errors}}
+                    </div>
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label class="font-weight-bold" for="comentarios">Déjanos tus comentarios: (<span id="info">Máximo 200 caracteres</span>)</label>
+                        <!-- <textarea class="form-control" name="comments" id="comments" rows="5" onkeypress="return limitarCaracteresComentarios(event, this.value, 200); actualizarCantidadCaracteres(200)" onkeydown="return limitarCaracteresComentarios(event, this.value, 200);" onkeyup=" actualizarCantidadCaracteres(200)"></textarea> -->
+                        <div class="input-group">
+                            {{form.content}}
+                        </div>
+                        {{form.content.errors}}
+                    </div>
+                    <!-- botones -->
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary"  id="enviar" value="Registrar">
+                        <input type="reset" class="btn btn-secondary" id="reset" value="Limpiar">
+                    </div>
+                </form> 
+                {% comment %} <form action="" method="POST">  
+                    {% csrf_token %}
+                    <table>
+                    {{form.as_table}}
+                    </table>
+                    <input type="submit" value="Enviar">
+                </form>   {% endcomment %}
+            </div>
+            <div class="col-md-6 order-2">
+                <img  id="faker" src="{% static 'core/images/Esports/god.jpg' %}" alt="Imagen" class="img-fluid">
+            </div>
+        </div>
+</main>
+{% endblock %}

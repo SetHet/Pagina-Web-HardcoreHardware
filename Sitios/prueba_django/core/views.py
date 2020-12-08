@@ -6,33 +6,23 @@ import random
 
 # Create your views here.
 def home(request):
-
-    dictionary_models = ProductosCarruselHome(baseRequired())
-
-    return products_views.home(request, dictionary_models)
-
+    dic = ProductosCarruselHome({})
+    return render(request, "core/home.html", dic)
 
 def guias(request):
-    return render(request, "core/guias.html", baseRequired())    
+    return render(request, "core/guias.html")    
 
 
 def about(request):
-    return render(request, "core/acerca_de.html", baseRequired())   
+    return render(request, "core/acerca_de.html")   
 
 
 def valorMoneda(request):
-    return render(request, "core/calcular_precio.html", baseRequired()) 
+    return render(request, "core/calcular_precio.html") 
 
 def login(request):
-    return render(request, "core/login.html", baseRequired())
+    return render(request, "core/login.html")
 
-
-def baseRequired():
-    dicctionary = {
-        'categorias_all':Categoria.objects.all().order_by('nameSpanish')
-    }
-
-    return dicctionary
 
 
 

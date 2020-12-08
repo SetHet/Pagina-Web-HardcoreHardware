@@ -80,7 +80,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="nadbarDropdown" 
                         data-toggle="dropdown">Categorias</a>
                         <div class="dropdown-menu dropdown-menu-md-right">
-                            {% for categoria in categorias_all %}
+                            {% for categoria in lista_categorias %}
                                 <a class="dropdown-item" href="{% url 'search' %}?search=categoria%3A{{categoria.title}}" target="_top">{{categoria.nameSpanish}}</a>
                             {% endfor %}
                         </div>

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'contact',
     'monitores.apps.MonitoresConfig',
     'products.apps.ProductsConfig',
     'register',
@@ -136,3 +137,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'soportehardcorehardware@gmail.com'
 EMAIL_HOST_PASSWORD = 'un7porfauwu'
+
+# EMAIL_HOST = 'smtp.mailtrap.io'
+# EMAIL_HOST_USER = 'd7d06fd6f26a84'
+# EMAIL_HOST_PASSWORD = 'ff8e1bf5c97530'
+# EMAIL_PORT = '2525'

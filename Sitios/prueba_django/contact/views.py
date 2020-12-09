@@ -17,7 +17,7 @@ def contact(request):
                 "HardcoreHardware: Contacto",
                 "De {} <{}>\n\nEscribió:\n\n{}".format(name,email,content),
                 "no-reply@inbox.mailtrap.io",
-                ["miyakodn@gmail.com"],
+                ["soportehardcorehardware@gmail.com"],
                 reply_to = [email]
             )
             try:

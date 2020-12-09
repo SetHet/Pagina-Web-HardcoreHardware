@@ -42,3 +42,8 @@
 .recovery-password:link {
     color: var(--custom-color-light);
 }
+
+.errornote {
+    border: 1px solid var(--custom-color-light);
+    background-color: var(--custom-color-black);
+}

@@ -21,7 +21,14 @@
         
         <div id="content" class="colM">
             <div id="content-main">
-                <form action="/admin/login/?next=/admin/" method="post">
+                {% for key in request.POST %}
+                {% if key == "password" %}
+                <p class="errornote">
+                    Por favor introduzca el nombre de usuario y la clave correctos para una cuenta de personal. Observe que ambos campos pueden ser sensibles a mayúsculas.
+                </p>
+                {% endif %}
+                {% endfor %}
+                <form action="/accounts/login/" method="post">
                     {% csrf_token %}
                     <div class="form-group">
                         <label class="font-weight-bold required" for="id_username">Usuario</label> 
@@ -33,11 +40,10 @@
                         <label class="font-weight-bold required" for="id_password">Contraseña</label> 
                         <div class="input-group">
                             <input type="password" name="password" required="" id="id_password">
-                            <input type="hidden" name="next" value="/admin/">
+                            <input type="hidden" name="next" value="/">
                         </div>
                     </div>
-                    <div class="col-12">
-                        <label>&nbsp;</label>
+                    <div class="col-12">  
                         <input class="button-submit" type="submit" value="Iniciar sesión">
                     </div>
                     <div class="col-12 mt-5">

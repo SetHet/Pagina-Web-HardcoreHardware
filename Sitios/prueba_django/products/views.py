@@ -109,11 +109,37 @@ def BusquedaFiltrada(wordsFiltro, categoriaFiltro):
 
 def product(request, pk_product):
     dicc = {}
+    
+    #producto elegido
     dicc['producto'] = Producto.objects.get(id=pk_product)
 
     #money
     price = dicc['producto'].price
-    money = str(int(price)) + " CLP"
+    money = GetCLP(price)
     dicc['money'] = money
 
+    #Enviar
     return render(request, "products/product.html", dicc)
+
+
+def GetCLP(price):
+    grupos_centenas = []
+    string = str(int(price))
+
+    #separar el numero en grupos
+    while len(string) > 3:
+        grupos_centenas.append(string[-3:])
+        string = string[0:-3]
+    grupos_centenas.append(string)
+
+    #unir los grupos con puntos
+    numero_unido = ""
+    for centenar in reversed(grupos_centenas):
+        numero_unido += centenar + "."
+
+    numero_unido = numero_unido[0:-1]   
+
+    #agregar contenido extra
+    money_clp = "$ "+ numero_unido + " CLP"
+
+    return money_clp

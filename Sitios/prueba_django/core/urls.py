@@ -7,6 +7,6 @@ urlpatterns = [
     path('guias/', guias, name='guias'),
     path('about/', about, name='about'),
     path('calcularPrecio/', valorMoneda, name='valor_moneda'),
-    #path('login/', login, name='login'),
+    path('login/', login, name='login'),
     
 ]

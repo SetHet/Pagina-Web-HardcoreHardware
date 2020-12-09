@@ -1,81 +1,79 @@
-body{
-    /*background: url(../images/wallpaper.jpg) no-repeat center center fixed;*/
-    background-size: cover;
+/* LOGIN FORM */
+
+body.login {
+    background: #f8f8f8;
 }
 
-.main-section{
-    margin:0 auto;
-    margin-top: 73%;
-    padding: 0;
+.login #header {
+    height: auto;
+    padding: 15px 16px;
+    justify-content: center;
 }
 
-.modal-content{
-    background-color: #73142d;
-    opacity: .98;
-    padding: 0 20px;
-    box-shadow: 0px 0px 6px #ff0000;
-    position: relative;
-    margin-bottom: 250px;
-    
-}
-.user-img{
-    margin-top: -50px;
-    margin-bottom: 35px;
-}
-
-.user-img img{
-    width: 100px;
-    height: 100px;
-    box-shadow: 0px 0px 6px #ff0000;
-}
-
-.form-group input{
-    height: 42px;
+.login #header h1 {
     font-size: 18px;
-    border: 0;
-    padding-left: 54px;
 }
 
-.form-group::before{
-    font-family: "Font Awesome\ 5 Free";
-    position: absolute;
-    left: 28px;
-    font-size: 22px;
-    padding-top: 4px;
+.login #header h1 a {
+    color: #fff;
 }
 
-.form-group#user-group::before{
-    content: "\f007";
+.login #content {
+    padding: 20px 20px 0;
 }
 
-.form-group#password-group::before{
-    content: "\f023";
+.login #container {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 28em;
+    min-width: 300px;
+    margin: 100px auto;
 }
 
-a{
-    width: 60%;
-    margin: 5px 0 3px;
+.login #content-main {
+    width: 100%;
 }
 
-.forgot-password{
-    padding: -2px 0;
+.login .form-row {
+    padding: 4px 0;
+    float: left;
+    width: 100%;
+    border-bottom: none;
 }
 
-h3{
-    font-size: 20px;
-    color: aliceblue;
+.login .form-row label {
+    padding-right: 0.5em;
+    line-height: 2em;
+    font-size: 1em;
+    clear: both;
+    color: #333;
 }
-.form-group .input{
 
+.login .form-row #id_username, .login .form-row #id_password {
+    clear: both;
+    padding: 8px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.login span.help {
+    font-size: 10px;
+    display: block;
+}
+
+.login .submit-row {
+    clear: both;
+    padding: 1em 0 0 9.4em;
+    margin: 0;
+    border: none;
+    background: none;
     text-align: left;
 }
-.btn-primary{
+
+.login .password-reset-link {
     text-align: center;
-    padding-right: 60px;
-    margin-bottom: 10px;
-}
-.btn-secondary{
-    text-align: center;
-    padding-right: 50px;
-    margin-bottom: 10px;
 }

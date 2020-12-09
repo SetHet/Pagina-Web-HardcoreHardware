@@ -21,6 +21,13 @@
         
         <div id="content" class="colM">
             <div id="content-main">
+                {% for key in request.POST %}
+                {% if key == "password" %}
+                <p class="errornote">
+                    Por favor introduzca el nombre de usuario y la clave correctos para una cuenta de personal. Observe que ambos campos pueden ser sensibles a mayúsculas.
+                </p>
+                {% endif %}
+                {% endfor %}
                 <form action="/accounts/login/" method="post">
                     {% csrf_token %}
                     <div class="form-group">

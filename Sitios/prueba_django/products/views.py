@@ -110,4 +110,10 @@ def BusquedaFiltrada(wordsFiltro, categoriaFiltro):
 def product(request, pk_product):
     dicc = {}
     dicc['producto'] = Producto.objects.get(id=pk_product)
+
+    #money
+    price = dicc['producto'].price
+    money = str(int(price)) + " CLP"
+    dicc['money'] = money
+
     return render(request, "products/product.html", dicc)

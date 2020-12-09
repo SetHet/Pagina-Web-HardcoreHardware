@@ -19,3 +19,6 @@ form .error
     color: #F00;
     background-color: #FFF;
   }
+.errorlist {
+    color: white;
+}

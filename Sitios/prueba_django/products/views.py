@@ -50,6 +50,7 @@ def search(request):
         # Se rescatan todas los productos para enviarlos si no hay filtro
         list_productos = Producto.objects.all()
 
+    list_productos = list_productos.order_by('name')
     # Start Paginacion
     page = request.GET.get('page', 1)
     paginator = Paginator(list_productos, 12)

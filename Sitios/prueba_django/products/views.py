@@ -65,6 +65,13 @@ def search(request):
 
     dicc['list_productos'] = list_productos
 
+    #Diccionario de precios
+    dict_price = {}
+    for producto in list_productos:
+        dict_price[producto.id] = GetCLP(producto.price)
+    
+    dicc['dict_price'] = dict_price
+
     return render(request, "products/search.html", dicc)  
 
 

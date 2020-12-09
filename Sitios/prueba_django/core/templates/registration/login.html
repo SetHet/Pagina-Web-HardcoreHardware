@@ -1,21 +1,51 @@
-<!DOCTYPE html>
-<html lang="es-CL">
-<head>
-    <title>Login</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-</head>
-<body>
-    <h2>Autentificacion</h2>
-    <form action="" method="POST">
-        {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
+
+{% extends 'core/base.html' %}
+{% block tab_title %}Login{% endblock %}
+{% load static %}
+    {% block css_custom %}
         
-        <input type="submit" value="Login">
-    </form>
-   
-</body>
-</html>
+        <link rel="stylesheet" type="text/css" href="{% static 'core/css/login.css' %}">
+        
+    {% endblock %}
+{% block content %} 
+    <!-- Container -->
+    <div id="container" class="container container-login">
+        <!-- Header -->
+        <div id="header">
+            <div id="branding">
+                <h1>Inicio Sesión</h1>
+            </div>    
+        </div>
+        <!-- END Header -->
+        <!-- Content -->
+        
+        <div id="content" class="colM">
+            <div id="content-main">
+                <form action="/admin/login/?next=/admin/" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label class="font-weight-bold required" for="id_username">Usuario</label> 
+                        <div class="input-group">
+                            <input type="text" name="username" autofocus="" required="" id="id_username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold required" for="id_password">Contraseña</label> 
+                        <div class="input-group">
+                            <input type="password" name="password" required="" id="id_password">
+                            <input type="hidden" name="next" value="/admin/">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label>&nbsp;</label>
+                        <input class="button-submit" type="submit" value="Iniciar sesión">
+                    </div>
+                    <div class="col-12 mt-5">
+                        <p><a class="recovery-password" href="/reset_password/">Recuperar Contraseña</a></p>
+                    </div>
+                </form>
+            </div>      
+            <br class="clear">
+        </div> 
+    </div>
+{% endblock %}

@@ -73,7 +73,7 @@
                                         <a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesion</a>
                                     </div>
                             {%else%}
-                                <a class="nav-link" href="/admin/login/?next=/admin/" target="_top">Acceder</a>
+                                <a class="nav-link" href="{% url 'login' %}" target="_top">Acceder</a>
                             {%endif%}
                     </li>
                     <li class="nav-item dropdown show">
@@ -126,9 +126,11 @@
                     <ul class="list-unstyled">
                         <li class="font-weight-bold text-uppercase">Social Networks</li>  
                         {% for red_social in redes_sociales %}
-                        <li>
-                            <a href="{{red_social.url}}" target="blank" class="text-reset"><i class="fab {{red_social.icon}}"></i> {{red_social.name}}</a>
-                        </li>
+                            {% if red_social.url %}
+                                <li>
+                                    <a href="{{red_social.url}}" target="blank" class="text-reset"><i class="fab {{red_social.icon}}"></i> {{red_social.name}}</a>
+                                </li>
+                            {% endif %}
                         {% endfor %}
                     </ul>
                 </div>
@@ -137,7 +139,7 @@
                         <li class="font-weight-bold text-uppercase">Páginas</li>
                         <li><a href="{% url 'home' %}" target="_top" class="text-reset footer-link">Inicio</a></li>
                         <li><a href="{% url 'guias' %}" target="_top" class="text-reset footer-link">Guias</a></li>
-                        <li><a href="https://www.google.cl" class="text-reset footer-link">Contacto</a></li>
+                        <li><a href="{% url 'contact' %}" class="text-reset footer-link">Contacto</a></li>
                         <li><a href="{% url 'about' %}" target="_top" class="text-reset footer-link">Acerca de</a></li>
                     </ul>
                 </div>

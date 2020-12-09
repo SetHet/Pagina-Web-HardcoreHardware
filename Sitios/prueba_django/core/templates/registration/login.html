@@ -3,17 +3,17 @@
 {% block tab_title %}Login{% endblock %}
 {% load static %}
     {% block css_custom %}
-        <link rel="stylesheet" type="text/css" href="{% static 'core/css/loginbase.css' %}">
+        
         <link rel="stylesheet" type="text/css" href="{% static 'core/css/login.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'core/css/responsive.css' %}">
+        
     {% endblock %}
 {% block content %} 
     <!-- Container -->
-    <div id="container">
+    <div id="container" class="container container-login">
         <!-- Header -->
         <div id="header">
             <div id="branding">
-                <h1 id="site-name"><a href="/admin/">Administración de Django</a></h1>
+                <h1>Inicio Sesión</h1>
             </div>    
         </div>
         <!-- END Header -->
@@ -23,19 +23,25 @@
             <div id="content-main">
                 <form action="/admin/login/?next=/admin/" method="post">
                     {% csrf_token %}
-                    <div class="form-row">
-                        <label class="required" for="id_username">Nombre de usuario:</label> <input type="text" name="username" autofocus="" required="" id="id_username">
+                    <div class="form-group">
+                        <label class="font-weight-bold required" for="id_username">Usuario</label> 
+                        <div class="input-group">
+                            <input type="text" name="username" autofocus="" required="" id="id_username">
+                        </div>
                     </div>
-                    <div class="form-row">
-                        <label class="required" for="id_password">Contraseña:</label> <input type="password" name="password" required="" id="id_password">
-                        <input type="hidden" name="next" value="/admin/">
+                    <div class="form-group">
+                        <label class="font-weight-bold required" for="id_password">Contraseña</label> 
+                        <div class="input-group">
+                            <input type="password" name="password" required="" id="id_password">
+                            <input type="hidden" name="next" value="/admin/">
+                        </div>
                     </div>
-                    <div class="submit-row">
-                        <label>&nbsp;</label><input type="submit" value="Iniciar sesión">
+                    <div class="col-12">
+                        <label>&nbsp;</label>
+                        <input class="button-submit" type="submit" value="Iniciar sesión">
                     </div>
-                    <div class="submit-row">
-                        <p><a href="/reset_password/">Recuperar Contraseña</a></p>
-                        
+                    <div class="col-12 mt-5">
+                        <p><a class="recovery-password" href="/reset_password/">Recuperar Contraseña</a></p>
                     </div>
                 </form>
             </div>      

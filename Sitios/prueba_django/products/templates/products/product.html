@@ -4,22 +4,29 @@
 
 {% block css_custom %}
     <link rel="stylesheet" href="{% static 'core/css/categorias.css' %}">
+    <link rel="stylesheet" href="{% static 'products/css/product.css' %}">
 {% endblock %}
 
 {% block content %}    
-    <main class="container-xl text-white">
+    <main class="container-lg text-white">
         <div class="row">
-            <div class="col-8">
-                <img src="{{producto.image.url}}" style="width:100%;">
+            <div class="col-8 col-special">
+                <div class="sector-image">
+                    <img src="{{producto.image.url}}">
+                </div>
             </div>
-            <div class="col-4">
-                <h1>{{producto.name}}</h1>
-                <p>Categoria: {{producto.categoria}}</p>
-                <h4>${{producto.price}} CLP</h4>
+            <div class="col-4 col-special">
+                <div class="sector-info">
+                    <h1>{{producto.name}}</h1>
+                    <p>Categoria: {{producto.categoria}}</p>
+                    <h4 class="precio">${{producto.price}} CLP</h4>
+                </div>
             </div>
         </div>
         <div class="row">
-            <p>{{producto.descripcion}}</p>
+            <div class="col sector-descripcion">
+                <p>{{producto.descripcion}}</p>
+            </div>
         </div>
     </main>
 {% endblock %}

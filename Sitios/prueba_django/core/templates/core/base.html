@@ -69,7 +69,7 @@
                                 <a class="nav-link dropdown-toggle" href="#" id="nadbarDropdown" 
                                 data-toggle="dropdown">Cuenta</a>
                                     <div class="dropdown-menu dropdown-menu-md-right">
-                                        <a class="dropdown-item" href="#" >Usuario: {{ user.username }}</a>
+                                        <a class="dropdown-item" href="/admin/" >Usuario: {{ user.username }}</a>
                                         <a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesion</a>
                                     </div>
                             {%else%}
@@ -179,7 +179,7 @@
     <script src="{% static 'core/js/tiempo.js' %}"></script>
     <script src="{% static 'core/js/offer.js' %}"></script>
     <script src="{% static 'core/js/price.js' %}"></script>
-    <script src="{% static 'core/js/guias.js' %}"></script>
+    
     <!--End Custom Scripts-->
     {% block js_custom %}
     
